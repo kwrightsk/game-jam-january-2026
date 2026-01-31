@@ -1,12 +1,14 @@
-extends AnimatedSprite2D
+extends Node2D
 
-class_name PaintbrushCursor
+var brush_up = load("res://paintbrush-cursor.png")
+var brush_down = load("res://paintbrush-cursor-down.png")
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-	
+	Input.set_custom_mouse_cursor(brush_up)
+
 func _process(delta: float) -> void:
-	var mouse_position = get_global_mouse_position()
-	self.global_position = mouse_position
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		$paintbrush.play("click")
+	
+	Input.set_custom_mouse_cursor(brush_up)
+	
+	if (Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
+		Input.set_custom_mouse_cursor(brush_down)

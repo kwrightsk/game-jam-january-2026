@@ -1,27 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://0b3tynguqs3p"]
+[gd_scene load_steps=2 format=3 uid="uid://0b3tynguqs3p"]
 
-[ext_resource type="Texture2D" uid="uid://c7p8o4wxwe08t" path="res://paintbrush-cursor-down.png" id="1_i4t60"]
-[ext_resource type="Texture2D" uid="uid://clbnbtckxrp2p" path="res://paintbrush-cursor.png" id="2_c2etc"]
 [ext_resource type="Script" path="res://paintbrush_cursor.gd" id="3_60sci"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_p4b1r"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_i4t60")
-}],
-"loop": true,
-"name": &"click",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_c2etc")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="Root" type="Node2D"]
 
@@ -37,9 +16,7 @@ color = Color(0.207843, 0.313726, 1, 1)
 
 [node name="colouring book" type="Node2D" parent="."]
 
-[node name="paintbrush" type="AnimatedSprite2D" parent="colouring book"]
+[node name="paintbrush" type="Node2D" parent="colouring book"]
 texture_filter = 1
 position = Vector2(0, -7)
-sprite_frames = SubResource("SpriteFrames_p4b1r")
-animation = &"click"
 script = ExtResource("3_60sci")
