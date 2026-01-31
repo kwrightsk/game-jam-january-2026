@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://0b3tynguqs3p"]
+[gd_scene load_steps=3 format=3 uid="uid://0b3tynguqs3p"]
 
-[ext_resource type="Script" path="res://paintbrush_cursor.gd" id="3_60sci"]
+[ext_resource type="Script" path="res://colouring_book.gd" id="1_qyhf5"]
+[ext_resource type="PackedScene" uid="uid://dj1pr0dkbtivo" path="res://paintbrush.tscn" id="2_fyjct"]
 
 [node name="Root" type="Node2D"]
 
@@ -15,8 +16,11 @@ grow_vertical = 2
 color = Color(0.207843, 0.313726, 1, 1)
 
 [node name="colouring book" type="Node2D" parent="."]
+script = ExtResource("1_qyhf5")
 
-[node name="paintbrush" type="Node2D" parent="colouring book"]
-texture_filter = 1
-position = Vector2(0, -7)
-script = ExtResource("3_60sci")
+[node name="paintbrush" parent="colouring book" instance=ExtResource("2_fyjct")]
+
+[node name="Timer" type="Timer" parent="colouring book"]
+wait_time = 10.0
+
+[connection signal="timeout" from="colouring book/Timer" to="colouring book" method="_on_timer_timeout"]
