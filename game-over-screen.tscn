@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://uof5t3ir6igt"]
+[gd_scene load_steps=4 format=3 uid="uid://uof5t3ir6igt"]
 
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_0wk6x"]
 [ext_resource type="Texture2D" uid="uid://ba6mo6y6urtm7" path="res://assets/shirt-1671181932-5abe8617e0731d1ab2d8b2f6a6602d1e.webp" id="2_r5a24"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvsqo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
 
 [node name="Game-over-screen" type="Node2D"]
 
@@ -22,14 +30,31 @@ anchors_preset = 0
 offset_right = 1150.0
 offset_bottom = 647.0
 
-[node name="Title" type="Label" parent="UI"]
-layout_mode = 1
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(400, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 323.0
+offset_top = 122.0
+offset_right = 814.0
+offset_bottom = 604.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_r5a24")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="."]
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 225.0
-offset_top = 75.0
-offset_right = -192.0
-offset_bottom = 181.0
+offset_left = 224.0
+offset_top = 85.0
+offset_right = 944.0
+offset_bottom = 191.0
 grow_horizontal = 2
 pivot_offset = Vector2(60, 60)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -38,20 +63,39 @@ theme_override_font_sizes/font_size = 80
 text = "Game Over"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(400, 200)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 346.0
-offset_top = 152.0
-offset_right = 805.0
-offset_bottom = 605.0
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 481.0
+offset_top = 411.0
+offset_right = 652.0
+offset_bottom = 476.0
+
+[node name="Panel" type="Panel" parent="TextureButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.412
+anchor_top = -2.669
+anchor_right = -3.412
+anchor_bottom = -2.669
+offset_left = 860.452
+offset_top = 286.485
+offset_right = 1144.45
+offset_bottom = 350.485
+theme_override_styles/panel = SubResource("StyleBoxFlat_jvsqo")
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="TextureButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.471
+anchor_top = 2.338
+anchor_right = 2.471
+anchor_bottom = 2.338
+offset_left = -130.541
+offset_top = -17.97
+offset_right = 130.459
+offset_bottom = 18.03
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("2_r5a24")
-expand_mode = 1
-stretch_mode = 5
+theme_override_fonts/normal_font = ExtResource("1_0wk6x")
+theme_override_font_sizes/normal_font_size = 25
+text = "PLAY AGAIN"
