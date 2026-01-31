@@ -1,4 +1,8 @@
+
 [gd_scene load_steps=4 format=3 uid="uid://vgim6n6jyc0v"]
+
+[gd_scene load_steps=4 format=3 uid="uid://pq3cbr3vk3pt"]
+
 
 [ext_resource type="Script" path="res://scripts/interactable_colour.gd" id="1_pcoyx"]
 [ext_resource type="PackedScene" uid="uid://cvdot61awk0nm" path="res://Scenes/click_colour.tscn" id="2_mta3s"]

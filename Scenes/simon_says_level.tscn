@@ -1,8 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://8qdw8mq7yxqf"]
 
-[ext_resource type="PackedScene" uid="uid://do3uttmbounjs" path="res://Scenes/main_level.tscn" id="1_er3jd"]
+
+[ext_resource type="PackedScene" uid="uid://0b3tynguqs3p" path="res://rootMainScene.tscn" id="1_er3jd"]
 [ext_resource type="Script" path="res://scripts/simon_says_level.gd" id="2_3ww8m"]
-[ext_resource type="PackedScene" uid="uid://3esa31n8jgl0" path="res://Scenes/simon_says_pixel.tscn" id="2_qgo7r"]
+[ext_resource type="PackedScene" uid="uid://dx7y7yfnal5wc" path="res://Scenes/simon_says_pixel.tscn" id="2_qgo7r"]
+
 
 [node name="SimonSaysLevel" instance=ExtResource("1_er3jd")]
 script = ExtResource("2_3ww8m")
@@ -10,14 +12,17 @@ script = ExtResource("2_3ww8m")
 [node name="Background" parent="." index="0"]
 layer = -1
 
+[node name="ColorRect" parent="Background" index="0"]
+z_index = -3
+
 [node name="SimonSaysPixel" parent="." index="1" instance=ExtResource("2_qgo7r")]
-position = Vector2(399, 358)
+position = Vector2(493, 262)
 
 [node name="SimonSaysPixel2" parent="." index="2" instance=ExtResource("2_qgo7r")]
-position = Vector2(579, 199)
+position = Vector2(668, 262)
 
 [node name="SimonSaysPixel3" parent="." index="3" instance=ExtResource("2_qgo7r")]
-position = Vector2(754, 356)
+position = Vector2(492, 442)
 
 [node name="SimonSaysPixel4" parent="." index="4" instance=ExtResource("2_qgo7r")]
-position = Vector2(580, 526)
+position = Vector2(668, 441)
