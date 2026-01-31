@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://kdkv3jlo2bps"]
 
-[ext_resource type="Script" path="res://scripts/colour_picker.gd" id="1_lwy5u"]
+[ext_resource type="Script" path="res://Scripts/colour_picker.gd" id="1_lwy5u"]
 [ext_resource type="PackedScene" uid="uid://s5xb1jxo51go" path="res://Scenes/visual_colour.tscn" id="1_vimi8"]
 [ext_resource type="PackedScene" uid="uid://cvdot61awk0nm" path="res://Scenes/click_colour.tscn" id="2_s3psp"]
 
