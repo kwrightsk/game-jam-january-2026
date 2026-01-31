@@ -3,6 +3,8 @@ extends Area2D
 var clickable = false
 var colour
 
+signal colourClicked(colour)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	colour = get_child(1).animation
@@ -17,9 +19,12 @@ func _process(delta: float) -> void:
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and Input.is_action_pressed("MOUSE_BUTTON_LEFT") and clickable:
 		print(1)
+		self.get_parent()
+		colourClicked.emit(self.get_Colour())
 	
 
 func set_Colour(c):
+	colour = c
 	self.get_child(1).play(c)
 	
 
