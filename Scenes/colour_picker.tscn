@@ -5,6 +5,7 @@
 
 [node name="colourPicker" type="Node"]
 script = ExtResource("1_lwy5u")
+click_me_path = NodePath("clickMe")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 400.0
