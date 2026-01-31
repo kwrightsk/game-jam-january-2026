@@ -4,6 +4,9 @@ var colours = ["red", "blue", "green", "yellow"]
 var matched = false
 var selected_colour
 
+const GAME_OVER_SCENE := "res://game-over-screen.tscn"
+
+
 @export var click_me_path: NodePath
 @onready var click_me = get_node(click_me_path)
 
@@ -17,6 +20,7 @@ func _ready() -> void:
 	click_me.set_Colour(colours.pick_random())
 	selected_colour = click_me.get_Colour()
 	# print(selected_colour)
+	
 	
 	rand_colours()
 	
@@ -56,3 +60,4 @@ func _on_colour_clicked(colour):
 		
 	else:
 		print("Wrong!")
+		get_tree().change_scene_to_file(GAME_OVER_SCENE)
