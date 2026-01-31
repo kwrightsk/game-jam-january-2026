@@ -1,8 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dj1pr0dkbtivo"]
+[gd_scene load_steps=2 format=3 uid="uid://qd1moa48gg4j"]
 
 [ext_resource type="Script" path="res://paintbrush_cursor.gd" id="1_k4ena"]
 
 [node name="paintbrush" type="Node2D"]
-texture_filter = 1
-position = Vector2(0, -7)
 script = ExtResource("1_k4ena")
