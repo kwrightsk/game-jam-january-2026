@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://0b3tynguqs3p"]
+[gd_scene load_steps=2 format=3 uid="uid://0b3tynguqs3p"]
 
-[node name="Root2" type="Node2D"]
+[ext_resource type="Script" path="res://Scenes/main_level.gd" id="1_jejdx"]
+
+[node name="MainLevel" type="Node2D"]
+script = ExtResource("1_jejdx")
 
 [node name="Background" type="CanvasLayer" parent="."]
 
