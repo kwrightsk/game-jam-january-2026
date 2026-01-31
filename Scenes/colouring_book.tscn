@@ -14,4 +14,26 @@ wait_time = 10.0
 [node name="ColorRect" type="ColorRect" parent="."]
 color = Color(0.171, 0.12, 0.3, 1)
 
+[node name="MinigamePrompt" type="Label" parent="."]
+layout_direction = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 436.0
+offset_top = 1.0
+offset_right = 606.0
+offset_bottom = 24.0
+grow_horizontal = 2
+scale = Vector2(1.95706, 2.45775)
+size_flags_horizontal = 0
+text = "Draw over the screen!"
+
+[node name="TimeLabel" type="Label" parent="."]
+offset_left = 13.0
+offset_top = 1.0
+offset_right = 56.0
+offset_bottom = 24.0
+scale = Vector2(2.27689, 2.09404)
+text = "Time:"
+
 [connection signal="timeout" from="MinigameTimer" to="." method="_on_minigame_timer_timeout"]
