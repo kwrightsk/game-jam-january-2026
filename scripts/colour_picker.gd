@@ -7,6 +7,9 @@ var selected_colour
 @export var click_me_path: NodePath
 @onready var click_me = get_node(click_me_path)
 
+@export var round_path: NodePath
+@onready var round = get_node(round_path)
+
 var redo = preload("res://Scenes/colour_picker.tscn")
 
 # Called when the node enters the scene tree for the first time.
@@ -14,6 +17,7 @@ func _ready() -> void:
 	click_me.set_Colour(colours.pick_random())
 	selected_colour = click_me.get_Colour()
 	# print(selected_colour)
+	
 	rand_colours()
 	
 	for c in $clickables.get_children():
@@ -23,7 +27,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	round.text = "Round "+str(Globals.round)
 	
 
 func rand_colours():
@@ -45,6 +49,10 @@ func _on_colour_clicked(colour):
 	if colour == selected_colour:
 		print("Correct!")
 		get_tree().reload_current_scene()
+		
+		Globals.round += 1
+		
+		print(Globals.round)
 		
 	else:
 		print("Wrong!")

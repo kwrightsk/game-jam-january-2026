@@ -6,6 +6,7 @@
 [node name="colourPicker" type="Node"]
 script = ExtResource("1_lwy5u")
 click_me_path = NodePath("clickMe")
+round_path = NodePath("Round")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 400.0
@@ -29,3 +30,7 @@ position = Vector2(785, 518)
 
 [node name="clickMe" parent="." instance=ExtResource("2_cqqjx")]
 position = Vector2(652, 73)
+
+[node name="Round" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
