@@ -6,6 +6,8 @@ var selected_colour
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$clickMe.set_Colour((colours[randi_range(0,3)]))
+	
 	selected_colour = $clickMe.get_Colour()
 	# print(selected_colour)
 	rand_colours()
