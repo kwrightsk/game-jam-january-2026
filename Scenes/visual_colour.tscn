@@ -1,6 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://s5xb1jxo51go"]
+[gd_scene load_steps=6 format=3 uid="uid://s5xb1jxo51go"]
+
+[ext_resource type="Texture2D" uid="uid://dnuyptsu218vr" path="res://assets/blueSquare.png" id="1_uj0do"]
+[ext_resource type="Texture2D" uid="uid://h4odx0bgt5a2" path="res://assets/greenSquare.png" id="2_d3oy6"]
+[ext_resource type="Texture2D" uid="uid://cqngkywrgde0e" path="res://assets/redSquare.png" id="3_ua356"]
+[ext_resource type="Texture2D" uid="uid://cnn85cu4wjht3" path="res://assets/yellowSquare.png" id="4_ch5la"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wqd77"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uj0do")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d3oy6")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ua356")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ch5la")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
 
 [node name="visualColour" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_wqd77")
+animation = &"green"
