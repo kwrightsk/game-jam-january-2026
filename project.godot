@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="game-jame-2026"
-run/main_scene="res://rootMainScene.tscn"
+run/main_scene="res://Scenes/paintbrush_cursor.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://qh5j8imflq6k"]
+
+[ext_resource type="Script" path="res://Scenes/paintbrush_cursor.gd" id="1_w3epq"]
+
+[node name="PaintbrushCursor" type="Node2D"]
+script = ExtResource("1_w3epq")
