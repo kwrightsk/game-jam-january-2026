@@ -60,7 +60,7 @@ pivot_offset = Vector2(60, 60)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_0wk6x")
 theme_override_font_sizes/font_size = 80
-text = "Game Over"
+text = "Game  Over"
 horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="."]
