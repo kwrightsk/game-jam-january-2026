@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://pq3cbr3vk3pt"]
+[gd_scene load_steps=4 format=3 uid="uid://b46h2qeluiuqj"]
 
 [ext_resource type="Script" path="res://scripts/interactable_colour.gd" id="1_pcoyx"]
-[ext_resource type="PackedScene" uid="uid://cvdot61awk0nm" path="res://Scenes/click_colour.tscn" id="2_mta3s"]
+[ext_resource type="PackedScene" uid="uid://cawurcr1r27rc" path="res://Scenes/click_colour.tscn" id="2_mta3s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_818jr"]
 
