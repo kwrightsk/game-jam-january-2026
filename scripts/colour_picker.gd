@@ -4,9 +4,15 @@ var colours = ["red", "blue", "green", "yellow"]
 var matched = false
 var selected_colour
 
+@export var click_me_path: NodePath
+@onready var click_me = get_node(click_me_path)
+
+var redo = preload("res://Scenes/colour_picker.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	selected_colour = $clickMe.get_Colour()
+	click_me.set_Colour(colours.pick_random())
+	selected_colour = click_me.get_Colour()
 	# print(selected_colour)
 	rand_colours()
 	
@@ -22,20 +28,23 @@ func _process(delta: float) -> void:
 
 func rand_colours():
 	var children = $clickables.get_children()
-	# Assign random colours
-	for c in children:
-		c.set_Colour(colours[randi_range(0,3)])
-		c.clickable = true
-	
-	# Force one clickable to match
-	var chosen = children.pick_random()
-	chosen.set_Colour(selected_colour)
-	#matched = true
+
+	# Make a shuffled copy of the colours
+	var shuffled_colours = colours.duplicate()
+	shuffled_colours.shuffle()
+
+	# Assign one colour per clickable
+	for i in children.size():
+		children[i].set_Colour(shuffled_colours[i])
+		children[i].clickable = true
+
 	
 
 func _on_colour_clicked(colour):
 	print("User clicked:", colour)
 	if colour == selected_colour:
 		print("Correct!")
+		get_tree().reload_current_scene()
+		
 	else:
 		print("Wrong!")
