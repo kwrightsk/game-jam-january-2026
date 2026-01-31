@@ -24,15 +24,16 @@ func _process(delta: float) -> void:
 
 func rand_colours():
 	var children = $clickables.get_children()
-	# Assign random colours
-	for c in children:
-		c.set_Colour(colours[randi_range(0,3)])
-		c.clickable = true
-	
-	# Force one clickable to match
-	var chosen = children.pick_random()
-	chosen.set_Colour(selected_colour)
-	#matched = true
+
+	# Make a shuffled copy of the colours
+	var shuffled_colours = colours.duplicate()
+	shuffled_colours.shuffle()
+
+	# Assign one colour per clickable
+	for i in children.size():
+		children[i].set_Colour(shuffled_colours[i])
+		children[i].clickable = true
+
 	
 
 func _on_colour_clicked(colour):
