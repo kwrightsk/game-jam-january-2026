@@ -5,3 +5,7 @@ func _ready() -> void:
 
 func _on_minigame_timer_timeout() -> void:
 	print("you suck")
+
+
+func _on_bug_spawn_timer_timeout() -> void:
+	print("bug spawn")

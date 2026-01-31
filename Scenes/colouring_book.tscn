@@ -1,11 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://djxt5qfv25rsi"]
+[gd_scene load_steps=3 format=3 uid="uid://djxt5qfv25rsi"]
 
 [ext_resource type="Script" path="res://Scenes/colouring_book.gd" id="1_45ish"]
+[ext_resource type="PackedScene" uid="uid://bl5wnl1jid5jc" path="res://Scenes/colour_eater_bug.tscn" id="2_fofd4"]
 
 [node name="ColouringBook" type="Node2D"]
 script = ExtResource("1_45ish")
 
 [node name="MinigameTimer" type="Timer" parent="."]
 wait_time = 10.0
+
+[node name="ColourEaterBug" parent="." instance=ExtResource("2_fofd4")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+color = Color(0.171, 0.12, 0.3, 1)
 
 [connection signal="timeout" from="MinigameTimer" to="." method="_on_minigame_timer_timeout"]

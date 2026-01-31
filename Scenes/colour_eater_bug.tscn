@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl5wnl1jid5jc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icf6c"]
+
+[node name="ColourEaterBug" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_icf6c")
+
+[node name="BugSpawnTimer" type="Timer" parent="."]
+wait_time = 10.0
