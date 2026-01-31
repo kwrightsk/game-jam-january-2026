@@ -4,6 +4,8 @@ var colours = ["red", "blue", "green", "yellow"]
 var matched = false
 var selected_colour
 
+var redo = preload("res://Scenes/colour_picker.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$clickMe.set_Colour((colours[randi_range(0,3)]))
@@ -40,5 +42,7 @@ func _on_colour_clicked(colour):
 	print("User clicked:", colour)
 	if colour == selected_colour:
 		print("Correct!")
+		get_tree().reload_current_scene()
+		
 	else:
 		print("Wrong!")
