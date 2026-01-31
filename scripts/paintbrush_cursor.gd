@@ -1,7 +1,7 @@
 extends Node2D
 
-var brush_up = load("res://paintbrush-cursor.png")
-var brush_down = load("res://paintbrush-cursor-down.png")
+var brush_up = load("res://assets/paintbrush-cursor.png")
+var brush_down = load("res://assets/paintbrush-cursor-down.png")
 
 func _ready() -> void:
 	Input.set_custom_mouse_cursor(brush_up)

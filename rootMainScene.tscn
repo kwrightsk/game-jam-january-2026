@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bovjdxuiytyh1"]
 
-[ext_resource type="Script" path="res://colouring_book.gd" id="1_qyhf5"]
-[ext_resource type="Script" path="res://paintbrush_cursor.gd" id="2_62lt5"]
+[ext_resource type="Script" path="res://scripts/colouring_book.gd" id="1_qyhf5"]
+[ext_resource type="Script" path="res://scripts/paintbrush_cursor.gd" id="2_62lt5"]
 
 [node name="Root" type="Node2D"]
 

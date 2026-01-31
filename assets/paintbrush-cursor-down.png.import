@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7p8o4wxwe08t"
-path="res://.godot/imported/paintbrush-cursor-down.png-9c9b94eb10385c0412806c3a7781e62d.ctex"
+path="res://.godot/imported/paintbrush-cursor-down.png-b0e5e8f2844c3a1d40143e9c05424f14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://paintbrush-cursor-down.png"
-dest_files=["res://.godot/imported/paintbrush-cursor-down.png-9c9b94eb10385c0412806c3a7781e62d.ctex"]
+source_file="res://assets/paintbrush-cursor-down.png"
+dest_files=["res://.godot/imported/paintbrush-cursor-down.png-b0e5e8f2844c3a1d40143e9c05424f14.ctex"]
 
 [params]
 
