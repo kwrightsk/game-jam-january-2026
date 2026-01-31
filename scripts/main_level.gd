@@ -11,9 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 func game_over():
-	$GameOverLabel.visible = true
 	await get_tree().create_timer(0.5).timeout
-	$GameOverLabel.visible = false
 	get_tree().change_scene_to_file("res://game-over-screen.tscn")
 	
 	

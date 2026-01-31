@@ -50,7 +50,8 @@ func _on_pixel_clicked(viewport, event, shape_idx, pixel: Pixel):
 
 func check_player_input(pixel: Pixel):
 	if pixel.number != pattern[pattern_pos]:
-		game_over()#will trigger game over
+		game_over()
+		#game_over()#will trigger game over
 	else:
 		pattern_pos += 1
 		if pattern_pos >= pattern.size():
