@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://brp5dwa1lqmhn"]
+[gd_scene load_steps=3 format=3 uid="uid://kdkv3jlo2bps"]
 
 [ext_resource type="Script" path="res://scripts/colour_picker.gd" id="1_lwy5u"]
-[ext_resource type="PackedScene" uid="uid://b46h2qeluiuqj" path="res://Scenes/interactable_colour.tscn" id="2_cqqjx"]
+
+[ext_resource type="PackedScene" uid="uid://vgim6n6jyc0v" path="res://Scenes/interactable_colour.tscn" id="2_cqqjx"]
+
 
 [node name="colourPicker" type="Node"]
 script = ExtResource("1_lwy5u")
 click_me_path = NodePath("clickMe")
-
+round_path = NodePath("Round")
 [node name="Label" type="Label" parent="."]
 offset_left = 400.0
 offset_right = 560.0
@@ -29,3 +31,7 @@ position = Vector2(785, 518)
 
 [node name="clickMe" parent="." instance=ExtResource("2_cqqjx")]
 position = Vector2(652, 73)
+
+[node name="Round" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

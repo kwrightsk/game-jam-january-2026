@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmv3sucybstpu"]
+
+[gd_scene load_steps=4 format=3 uid="uid://bxr5tasveyyot"]
+
 
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_0wk6x"]
 [ext_resource type="Texture2D" uid="uid://ba6mo6y6urtm7" path="res://assets/shirt-1671181932-5abe8617e0731d1ab2d8b2f6a6602d1e.webp" id="2_r5a24"]
@@ -60,14 +62,14 @@ pivot_offset = Vector2(60, 60)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_0wk6x")
 theme_override_font_sizes/font_size = 80
-text = "Game  Over"
+text = "Game Over"
 horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 446.0
-offset_top = 400.0
-offset_right = 617.0
-offset_bottom = 465.0
+offset_left = 535.0
+offset_top = 402.0
+offset_right = 706.0
+offset_bottom = 467.0
 
 [node name="Panel" type="Panel" parent="TextureButton"]
 layout_mode = 1
@@ -79,7 +81,7 @@ anchor_bottom = -2.669
 offset_left = 532.452
 offset_top = 281.485
 offset_right = 816.452
-offset_bottom = 350.485
+offset_bottom = 348.485
 theme_override_styles/panel = SubResource("StyleBoxFlat_jvsqo")
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="TextureButton"]
@@ -101,10 +103,10 @@ theme_override_font_sizes/normal_font_size = 25
 text = "PLAY AGAIN"
 
 [node name="TextureButton2" type="TextureButton" parent="."]
-offset_left = 791.0
-offset_top = 383.0
-offset_right = 962.0
-offset_bottom = 448.0
+offset_left = 840.0
+offset_top = 389.0
+offset_right = 1011.0
+offset_bottom = 454.0
 
 [node name="Panel" type="Panel" parent="TextureButton2"]
 layout_mode = 1
@@ -113,10 +115,10 @@ anchor_left = -3.412
 anchor_top = -2.669
 anchor_right = -3.412
 anchor_bottom = -2.669
-offset_left = 536.452
-offset_top = 296.485
-offset_right = 877.452
-offset_bottom = 365.485
+offset_left = 541.452
+offset_top = 294.485
+offset_right = 684.452
+offset_bottom = 361.485
 theme_override_styles/panel = SubResource("StyleBoxFlat_jvsqo")
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="TextureButton2"]
@@ -127,21 +129,21 @@ anchor_left = 0.195
 anchor_top = 2.262
 anchor_right = 0.195
 anchor_bottom = 2.262
-offset_left = -61.345
-offset_top = -4.03
-offset_right = 242.655
-offset_bottom = 24.97
+offset_left = -56.345
+offset_top = -7.03
+offset_right = 54.655
+offset_bottom = 22.97
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("1_0wk6x")
 theme_override_font_sizes/normal_font_size = 25
-text = "LEADER BOARD"
+text = "QUIT"
 
 [node name="TextureButton3" type="TextureButton" parent="."]
-offset_left = 233.0
-offset_top = 403.0
-offset_right = 404.0
-offset_bottom = 468.0
+offset_left = 348.0
+offset_top = 401.0
+offset_right = 519.0
+offset_bottom = 466.0
 
 [node name="Panel" type="Panel" parent="TextureButton3"]
 layout_mode = 1
