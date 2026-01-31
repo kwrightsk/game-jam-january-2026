@@ -11,13 +11,13 @@ script = ExtResource("2_3ww8m")
 layer = -1
 
 [node name="SimonSaysPixel" parent="." index="1" instance=ExtResource("2_qgo7r")]
-position = Vector2(577, 495)
+position = Vector2(204, 332)
 
 [node name="SimonSaysPixel2" parent="." index="2" instance=ExtResource("2_qgo7r")]
-position = Vector2(731, 341)
+position = Vector2(419, 332)
 
 [node name="SimonSaysPixel3" parent="." index="3" instance=ExtResource("2_qgo7r")]
-position = Vector2(416, 339)
+position = Vector2(637, 330)
 
 [node name="SimonSaysPixel4" parent="." index="4" instance=ExtResource("2_qgo7r")]
-position = Vector2(573, 190)
+position = Vector2(849, 331)

@@ -28,42 +28,33 @@ func _ready() -> void:
 	PixelFour.change_color("yellow")
 	PixelFour.assign_number(4)
 	
+	for pixel in [PixelOne, PixelTwo, PixelThree, PixelFour]:
+		var area = pixel.get_node("Area2D")
+		area.input_event.connect(_on_pixel_clicked.bind(pixel))
 	#initialize pattern before the level starts :) 
 	for i in range(pattern_length):
 		pattern.append((pick_number())) 
 	
-	show_pattern_async()
+	await show_pattern()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-func get_input(event: InputEvent) -> void:
-	print("press")
-	if can_input and event is InputEventMouseButton and event.pressed:
-		print("press ok")
-		var clicked_pixel = get_pixel_at_pos(event.position)
-		if clicked_pixel:
-			clicked_pixel.flash_on()
-			await get_tree().create_timer(0.2).timeout
-			clicked_pixel.flash_off()
-			check_player_input(clicked_pixel)
-
-func get_pixel_at_pos(pos: Vector2) -> Pixel:
-	for pixel in [PixelOne, PixelTwo, PixelThree, PixelFour]:
-		if pixel.get_global_rect().has_point(pos):
-			return pixel
-	return null
+func _on_pixel_clicked(viewport, event, shape_idx, pixel: Pixel):
+	if can_input and event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		pixel.flash_on()
+		await get_tree().create_timer(0.2).timeout
+		pixel.flash_off()
+		check_player_input(pixel)
 
 func check_player_input(pixel: Pixel):
 	if pixel.number != pattern[pattern_pos]:
 		print ("fail") #will trigger game over
 	else:
 		pattern_pos += 1
-	
-	
-func show_pattern_async() -> void:
-	await show_pattern()
+		if pattern_pos >= pattern.size():
+			print("Success! Full pattern clicked!")
 	
 func show_pattern():
 	can_input = false
@@ -98,4 +89,3 @@ func pick_number():
 	else:
 		last_number = number
 	return number
-	
