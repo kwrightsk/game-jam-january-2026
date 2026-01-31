@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://kdkv3jlo2bps"]
+[gd_scene load_steps=3 format=3 uid="uid://kdkv3jlo2bps"]
 
 [ext_resource type="Script" path="res://scripts/colour_picker.gd" id="1_lwy5u"]
-[ext_resource type="PackedScene" uid="uid://s5xb1jxo51go" path="res://Scenes/visual_colour.tscn" id="1_vimi8"]
-[ext_resource type="PackedScene" uid="uid://cvdot61awk0nm" path="res://Scenes/click_colour.tscn" id="2_s3psp"]
+[ext_resource type="PackedScene" uid="uid://omkj03pprwud" path="res://Scenes/interactable_colour.tscn" id="2_cqqjx"]
 
 [node name="colourPicker" type="Node"]
 script = ExtResource("1_lwy5u")
@@ -13,25 +12,19 @@ offset_right = 560.0
 offset_bottom = 63.0
 text = "Click on this colour:"
 
-[node name="visualColour" parent="." instance=ExtResource("1_vimi8")]
-position = Vector2(655, 73)
-scale = Vector2(0.5, 0.5)
-
 [node name="clickables" type="Node" parent="."]
 
-[node name="clickColour" parent="clickables" instance=ExtResource("2_s3psp")]
-position = Vector2(468, 300)
-scale = Vector2(0.5, 0.5)
+[node name="interactableColour" parent="clickables" instance=ExtResource("2_cqqjx")]
+position = Vector2(328, 326)
 
-[node name="clickColour2" parent="clickables" instance=ExtResource("2_s3psp")]
-position = Vector2(902, 331)
-scale = Vector2(0.5, 0.5)
-animation = &"green"
+[node name="interactableColour2" parent="clickables" instance=ExtResource("2_cqqjx")]
+position = Vector2(796, 304)
 
-[node name="clickColour3" parent="clickables" instance=ExtResource("2_s3psp")]
-position = Vector2(476, 510)
-scale = Vector2(0.5, 0.5)
+[node name="interactableColour3" parent="clickables" instance=ExtResource("2_cqqjx")]
+position = Vector2(317, 543)
 
-[node name="clickColour4" parent="clickables" instance=ExtResource("2_s3psp")]
-position = Vector2(924, 509)
-scale = Vector2(0.5, 0.5)
+[node name="interactableColour4" parent="clickables" instance=ExtResource("2_cqqjx")]
+position = Vector2(785, 518)
+
+[node name="interactableColour" parent="." instance=ExtResource("2_cqqjx")]
+position = Vector2(652, 73)
