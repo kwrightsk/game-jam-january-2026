@@ -1,4 +1,4 @@
-extends Node2D
+extends "res://scripts/main_level.gd"
 
 @onready var PixelOne = $SimonSaysPixel
 @onready var PixelTwo = $SimonSaysPixel2
@@ -50,7 +50,7 @@ func _on_pixel_clicked(viewport, event, shape_idx, pixel: Pixel):
 
 func check_player_input(pixel: Pixel):
 	if pixel.number != pattern[pattern_pos]:
-		print ("fail") #will trigger game over
+		game_over()#will trigger game over
 	else:
 		pattern_pos += 1
 		if pattern_pos >= pattern.size():

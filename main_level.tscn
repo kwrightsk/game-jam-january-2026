@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://mmykcvnslwd8"]
+
+[ext_resource type="Script" path="res://scripts/main_level.gd" id="1_jejdx"]
+[ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="2_ne4eq"]
+
+[node name="MainLevel" type="Node2D"]
+script = ExtResource("1_jejdx")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GameOverLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 318.0
+offset_top = 196.0
+offset_right = 1180.0
+offset_bottom = 592.0
+theme_override_fonts/normal_font = ExtResource("2_ne4eq")
+theme_override_font_sizes/normal_font_size = 130
+text = "GAME OVER"
