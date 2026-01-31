@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://kdkv3jlo2bps"]
 
 [ext_resource type="Script" path="res://scripts/colour_picker.gd" id="1_lwy5u"]
-[ext_resource type="PackedScene" uid="uid://omkj03pprwud" path="res://Scenes/interactable_colour.tscn" id="2_cqqjx"]
+[ext_resource type="PackedScene" path="res://Scenes/interactable_colour.tscn" id="2_cqqjx"]
 
 [node name="colourPicker" type="Node"]
 script = ExtResource("1_lwy5u")
