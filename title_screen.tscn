@@ -10,12 +10,13 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.929412, 0.109804, 0.141176, 1)
 
-[node name="Root" type="Node2D"]
+[node name="Root2" type="Node2D"]
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="Background"]
+z_index = -2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -24,6 +25,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="UI" type="Control" parent="."]
+z_index = -1
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1150.0

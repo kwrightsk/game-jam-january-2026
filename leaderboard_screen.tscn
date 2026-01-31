@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0nht2hayuw8o"]
+
+[ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_3o3f0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kj02u"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+
+[node name="LeaderboardScreen" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = -3.412
+anchor_top = -2.669
+anchor_right = -3.412
+anchor_bottom = -2.669
+offset_left = 3971.62
+offset_top = 1773.51
+offset_right = 5037.62
+offset_bottom = 2322.51
+theme_override_styles/panel = SubResource("StyleBoxFlat_kj02u")
+
+[node name="Title" type="Label" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 159.0
+offset_top = 100.0
+offset_right = -193.0
+offset_bottom = 151.0
+grow_horizontal = 2
+pivot_offset = Vector2(60, 60)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_3o3f0")
+theme_override_font_sizes/font_size = 50
+text = "LEADERSHIP BOARD"
+horizontal_alignment = 1
