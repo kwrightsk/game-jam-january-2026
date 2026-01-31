@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 func game_over():
 	await get_tree().create_timer(0.5).timeout
+	load("res://game-over-screen.tscn")
 	get_tree().change_scene_to_file("res://game-over-screen.tscn")
 	
 	
