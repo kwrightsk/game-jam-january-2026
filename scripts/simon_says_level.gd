@@ -10,6 +10,7 @@ var numbers = [1, 2, 3, 4]
 var last_number = null #to make sure a number doesn't repeat more than two times in a row 
 var repeat_count = 0
 var pattern_length = 3
+var pattern_pos = 0
 var show_time := 0.5 #for the pixel pattern
 var gap_time := 0.3 #for in between the pixels
 var wait_time := 1 #for the user to read instructions
@@ -18,11 +19,14 @@ var can_input := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(PixelOne, PixelOne.get_class())
 	PixelOne.change_color("red")
+	PixelOne.assign_number(1)
 	PixelTwo.change_color("green")
+	PixelTwo.assign_number(2)
 	PixelThree.change_color("blue")
+	PixelThree.assign_number(3)
 	PixelFour.change_color("yellow")
+	PixelFour.assign_number(4)
 	
 	#initialize pattern before the level starts :) 
 	for i in range(pattern_length):
@@ -34,6 +38,30 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func get_input(event: InputEvent) -> void:
+	print("press")
+	if can_input and event is InputEventMouseButton and event.pressed:
+		print("press ok")
+		var clicked_pixel = get_pixel_at_pos(event.position)
+		if clicked_pixel:
+			clicked_pixel.flash_on()
+			await get_tree().create_timer(0.2).timeout
+			clicked_pixel.flash_off()
+			check_player_input(clicked_pixel)
+
+func get_pixel_at_pos(pos: Vector2) -> Pixel:
+	for pixel in [PixelOne, PixelTwo, PixelThree, PixelFour]:
+		if pixel.get_global_rect().has_point(pos):
+			return pixel
+	return null
+
+func check_player_input(pixel: Pixel):
+	if pixel.number != pattern[pattern_pos]:
+		print ("fail") #will trigger game over
+	else:
+		pattern_pos += 1
+	
+	
 func show_pattern_async() -> void:
 	await show_pattern()
 	
@@ -70,5 +98,4 @@ func pick_number():
 	else:
 		last_number = number
 	return number
-
 	
