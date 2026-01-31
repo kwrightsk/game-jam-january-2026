@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxr5tasveyyot"]
+[gd_scene load_steps=5 format=3 uid="uid://bxr5tasveyyot"]
 
+[ext_resource type="Script" path="res://game_over_screen.gd" id="1_0h2f5"]
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_0wk6x"]
 [ext_resource type="Texture2D" uid="uid://ba6mo6y6urtm7" path="res://assets/shirt-1671181932-5abe8617e0731d1ab2d8b2f6a6602d1e.webp" id="2_r5a24"]
 
@@ -12,6 +13,7 @@ border_width_bottom = 10
 border_color = Color(1, 1, 1, 1)
 
 [node name="Game-over-screen" type="Node2D"]
+script = ExtResource("1_0h2f5")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -123,14 +125,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_jvsqo")
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.195
-anchor_top = 2.262
-anchor_right = 0.195
-anchor_bottom = 2.262
-offset_left = -61.345
-offset_top = -4.03
-offset_right = 242.655
-offset_bottom = 24.97
+anchor_left = 0.725
+anchor_top = 2.327
+anchor_right = 0.841
+anchor_bottom = 2.574
+offset_left = -154.975
+offset_top = -6.255
+offset_right = 129.189
+offset_bottom = 6.68999
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("1_0wk6x")
