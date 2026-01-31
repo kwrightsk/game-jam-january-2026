@@ -14,5 +14,6 @@ scale = Vector2(13, 13)
 shape = SubResource("RectangleShape2D_818jr")
 
 [node name="colour" parent="." instance=ExtResource("2_mta3s")]
+animation = &"green"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

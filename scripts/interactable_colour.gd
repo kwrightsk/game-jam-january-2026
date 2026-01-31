@@ -19,5 +19,9 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		print(1)
 	
 
-func set_Colour():
-	colour = get_child(1).animation
+func set_Colour(c):
+	self.get_child(1).play(c)
+	
+
+func get_Colour():
+	return colour

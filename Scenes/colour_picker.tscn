@@ -26,5 +26,5 @@ position = Vector2(317, 543)
 [node name="interactableColour4" parent="clickables" instance=ExtResource("2_cqqjx")]
 position = Vector2(785, 518)
 
-[node name="interactableColour" parent="." instance=ExtResource("2_cqqjx")]
+[node name="clickMe" parent="." instance=ExtResource("2_cqqjx")]
 position = Vector2(652, 73)
