@@ -11,11 +11,26 @@ wait_time = 10.0
 
 [node name="ColourEaterBug" parent="." instance=ExtResource("2_fofd4")]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_right = -40.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(16.04, 1)
 color = Color(0.171, 0.12, 0.3, 1)
 
-[node name="MinigamePrompt" type="Label" parent="."]
+[node name="MinigamePrompt" type="Label" parent="Control"]
 layout_direction = 1
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -28,7 +43,7 @@ scale = Vector2(1.95706, 2.45775)
 size_flags_horizontal = 0
 text = "Draw over the screen!"
 
-[node name="TimeLabel" type="Label" parent="."]
+[node name="TimeLabel" type="Label" parent="Control"]
 offset_left = 13.0
 offset_top = 1.0
 offset_right = 56.0
