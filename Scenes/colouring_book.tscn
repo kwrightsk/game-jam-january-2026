@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://djxt5qfv25rsi"]
+[gd_scene load_steps=4 format=3 uid="uid://djxt5qfv25rsi"]
 
 [ext_resource type="Script" path="res://Scenes/colouring_book.gd" id="1_45ish"]
 [ext_resource type="PackedScene" uid="uid://bl5wnl1jid5jc" path="res://Scenes/colour_eater_bug.tscn" id="2_fofd4"]
+[ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="3_xinx8"]
 
 [node name="ColouringBook" type="Node2D"]
 script = ExtResource("1_45ish")
@@ -11,37 +12,41 @@ wait_time = 10.0
 
 [node name="ColourEaterBug" parent="." instance=ExtResource("2_fofd4")]
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
+[node name="Background" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
-layout_mode = 1
+[node name="ColorRect" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(16.04, 1)
 color = Color(0.171, 0.12, 0.3, 1)
 
-[node name="MinigamePrompt" type="Label" parent="Control"]
+[node name="MinigamePrompt" type="Label" parent="Background/ColorRect"]
 layout_direction = 1
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 436.0
-offset_top = 1.0
-offset_right = 606.0
-offset_bottom = 24.0
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 11.0
+offset_right = 281.0
+offset_bottom = -610.0
 grow_horizontal = 2
-scale = Vector2(1.95706, 2.45775)
+scale = Vector2(0.117685, 1.93151)
 size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("3_xinx8")
 text = "Draw over the screen!"
 
-[node name="TimeLabel" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 13.0
-offset_top = 1.0
-offset_right = 56.0
-offset_bottom = 24.0
-scale = Vector2(2.27689, 2.09404)
+[node name="TimeLabel" type="Label" parent="Background/ColorRect"]
+offset_left = 0.935162
+offset_top = 7.0
+offset_right = 80.9352
+offset_bottom = 30.0
+scale = Vector2(0.0881021, 1.76865)
+theme_override_fonts/font = ExtResource("3_xinx8")
 text = "Time:"
 
 [connection signal="timeout" from="MinigameTimer" to="." method="_on_minigame_timer_timeout"]
