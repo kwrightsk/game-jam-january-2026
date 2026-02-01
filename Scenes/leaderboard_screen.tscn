@@ -4,54 +4,56 @@
 
 [sub_resource type="GDScript" id="GDScript_np64g"]
 script/source = "extends Node2D
-
 @onready var leaderboard = $CanvasLayer/Rank
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_display_leaderboard() # Replace with function body.
-
+	
 func _display_leaderboard() -> void:
 	var leaderboard_path := \"user://leaderboard.json\"
 		
 	#read stored data from JSON file
 	var file_string = FileAccess.get_file_as_string(leaderboard_path)
 	var data_list = JSON.parse_string(file_string)
+	
+	# Add centered header
+	leaderboard.append_text(\"[center]\")
 				
 	for i in range(min(data_list.size(), 10)):
-		leaderboard.append_text(str(i+1) + \".  \" + _construct_player_string(data_list[i]) + \"\\n\")
+		leaderboard.append_text(str(i+1) + \".  \" + _construct_player_string(data_list[i], i) + \"\\n\")
 	
 	#display missing entries if there are less than 10 entries in the dictionary
 	if (data_list.size() < 10):
 		var missing = 10 - data_list.size()
 		for i in range(missing):
-			leaderboard.append_text(str(11 - missing + i) + \".  \" + \"---\" + \"\\n\")
-
-func _construct_player_string(data_dict : Dictionary) -> String:	
+			leaderboard.append_text(str(11 - missing + i) + \".  \" + \"---\")
+			if i < missing - 1:  # Don't add newline on the last entry
+				leaderboard.append_text(\"\\n\")
+	
+	# Close center tag without adding extra newline
+	#leaderboard.append_text()
+	
+func _construct_player_string(data_dict : Dictionary, index: int) -> String:	
 	var plr_name = data_dict[\"Name\"]
 	var score = data_dict[\"Score\"]
-
 	var s_txt = str(score)
 	
-	# Calculate space offset between Player Name, Score, and Round Number, so these columns are aligned
-	# Must do this manually because bbcode doesn't have easy align support
+	# Color pattern: red, blue, yellow, green
+	var colors = [\"#ff0000\", \"#0000ff\", \"#ffff00\", \"#00ff00\"]
+	var color = colors[index % 4]
 	
-	# Player name (calculate offset to align with all other player names in the table)
-	var space_offset = 15 - plr_name.length() + 1
+	# Calculate space offset between Player Name and Score
+	var space_offset = 12 - plr_name.length()  # Reduced spacing
 	var space_add = \"\"
-	for i in range (space_offset):
+	for i in range(max(space_offset, 1)):  # At least 1 space
 		space_add += \" \"
 		
 	var player_substring = plr_name + space_add
 		
-	# Score, Round, and Accuracy stats of player (calculate offset to align them with other stats in table)	
-	var stats_string = \"[color=#ffa000]\" + s_txt + \"[/color]\" + \"  RND: \" + s_txt 
+	# Score and Round stats with color
+	var stats_string = \"[color=\" + color + \"]Score: \" + s_txt + \"[/color]\" 
 	
-	space_offset = 49 - stats_string.length()
-	space_add = \"\"
-	for i in range (space_offset):
-		space_add += \" \"
-		
-	return player_substring + \"[color=black]\" + space_add + stats_string + \"[/color]\"
+	return player_substring + stats_string
 	
 func _on_back_button_pressed() -> void:
 	print(\"back_button\")
@@ -105,6 +107,7 @@ offset_top = 176.0
 offset_right = 1084.0
 offset_bottom = 490.0
 theme_override_fonts/normal_font = ExtResource("1_3o3f0")
+theme_override_font_sizes/normal_font_size = 25
 
 [node name="Title" type="Label" parent="CanvasLayer"]
 anchors_preset = 10
