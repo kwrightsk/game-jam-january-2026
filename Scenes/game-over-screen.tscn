@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxr5tasveyyot"]
+[gd_scene load_steps=5 format=3 uid="uid://b46ftpomv0jk8"]
 
 [ext_resource type="Script" path="res://scripts/game_over_screen.gd" id="1_lfbmt"]
 [ext_resource type="Texture2D" uid="uid://ba6mo6y6urtm7" path="res://assets/shirt-1671181932-5abe8617e0731d1ab2d8b2f6a6602d1e.webp" id="2_7eqmw"]

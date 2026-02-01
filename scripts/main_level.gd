@@ -4,6 +4,7 @@ extends Node2D
 @onready var colour_picker = $ColourPicker
 @onready var word_picker = $WordPicker
 @onready var color_word_picker = $WordColorPicker
+@onready var shape_color_picker = $ShapeColorPicker
 #@onready var score_label = $ScoreLabel
 #@onready var game_over_label = $GameOverLabel
 
@@ -14,7 +15,7 @@ func _ready():
 	print("Children of main_level:")
 	for child in get_children():
 		print("  - ", child.name)
-	mini_games = [simon_says, colour_picker, word_picker, color_word_picker]
+	mini_games = [simon_says, colour_picker, word_picker, color_word_picker, shape_color_picker]
 	#game_over_label.visible = false
 	
 	#reset score

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bke7l82ylxbw"]
+[gd_scene load_steps=5 format=3 uid="uid://bl7o3m11utorw"]
 
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_0wk6x"]
+[ext_resource type="Script" path="res://game_over_screen.gd" id="1_sgb16"]
 [ext_resource type="Texture2D" uid="uid://ba6mo6y6urtm7" path="res://assets/shirt-1671181932-5abe8617e0731d1ab2d8b2f6a6602d1e.webp" id="2_r5a24"]
 [ext_resource type="PackedScene" uid="uid://qh5j8imflq6k" path="res://Scenes/paintbrush_cursor.tscn" id="3_qbx45"]
 
@@ -13,6 +14,7 @@ border_width_bottom = 10
 border_color = Color(1, 1, 1, 1)
 
 [node name="Game-over-screen" type="Node2D"]
+script = ExtResource("1_sgb16")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1

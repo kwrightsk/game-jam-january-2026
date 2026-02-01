@@ -85,6 +85,7 @@ func check_player_input(pixel: Pixel):
 		pattern_pos += 1
 		if pattern_pos >= pattern.size():
 			print("Success! Full pattern clicked!")
+			Globals.round += 1
 			get_parent().on_minigame_complete()
 	
 func show_pattern():

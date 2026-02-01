@@ -15,10 +15,10 @@ func assign_number(num: int):
 	
 func change_color(color: String):
 	match color:
-		"red": $Area2D/PixelColor.color = Color.RED
-		"blue": $Area2D/PixelColor.color = Color.BLUE
-		"yellow": $Area2D/PixelColor.color = Color.YELLOW
-		"green": $Area2D/PixelColor.color = Color.GREEN
+		"red": $Area2D/PixelColor.color = Color(237/255.0, 28/255.0, 37/255.0, 1.0)
+		"blue": $Area2D/PixelColor.color = Color(63/255.0, 72/255.0, 204/255.0, 1.0)
+		"yellow": $Area2D/PixelColor.color = Color(255/255.0, 242/255.0, 4/255.0, 1.0)
+		"green": $Area2D/PixelColor.color = Color(34/255.0, 177/255.0, 76/255.0, 1.0)
 	
 func flash_on():
 	$Area2D/Border.visible = true
