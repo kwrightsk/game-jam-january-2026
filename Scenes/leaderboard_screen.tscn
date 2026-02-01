@@ -18,9 +18,6 @@ func _display_leaderboard() -> void:
 	#read stored data from JSON file
 	var file_string = FileAccess.get_file_as_string(leaderboard_path)
 	var data_list = JSON.parse_string(file_string)
-	
-	# Add centered header
-	leaderboard.append_text(\"[center]\")
 				
 	for i in range(min(data_list.size(), 10)):
 		leaderboard.append_text(str(i+1) + \".  \" + _construct_player_string(data_list[i], i) + \"\\n\")
@@ -33,27 +30,23 @@ func _display_leaderboard() -> void:
 			if i < missing - 1:  # Don't add newline on the last entry
 				leaderboard.append_text(\"\\n\")
 	
-	# Close center tag without adding extra newline
-	#leaderboard.append_text()
 	
 func _construct_player_string(data_dict : Dictionary, index: int) -> String:	
 	var plr_name = data_dict[\"Name\"]
 	var score = data_dict[\"Score\"]
 	var s_txt = str(score)
 	
-	# Color pattern: red, blue, yellow, green
-	var colors = [\"#ff0000\", \"#0000ff\", \"#ffff00\", \"#00ff00\"]
+	var colors = [\"#ED1C25\", \"#3F48CC\", \"#FFF204\", \"#22B14C\"]
 	var color = colors[index % 4]
 	
-	# Calculate space offset between Player Name and Score
-	var space_offset = 12 - plr_name.length()  # Reduced spacing
+	var max_name_width = 15
+	var space_offset = max_name_width - plr_name.length()
 	var space_add = \"\"
-	for i in range(max(space_offset, 1)):  # At least 1 space
+	for i in range(max(space_offset, 1)):  
 		space_add += \" \"
-		
+	
+	#build the string with name first, then spaces, then colored score
 	var player_substring = plr_name + space_add
-		
-	# Score and Round stats with color
 	var stats_string = \"[color=\" + color + \"]Score: \" + s_txt + \"[/color]\" 
 	
 	return player_substring + stats_string
@@ -119,10 +112,10 @@ offset_bottom = 2246.51
 theme_override_styles/panel = SubResource("StyleBoxFlat_kj02u")
 
 [node name="Rank" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 58.0
-offset_top = 176.0
-offset_right = 1084.0
-offset_bottom = 490.0
+offset_left = 224.0
+offset_top = 174.0
+offset_right = 1046.0
+offset_bottom = 488.0
 theme_override_fonts/normal_font = ExtResource("1_3o3f0")
 theme_override_font_sizes/normal_font_size = 25
 

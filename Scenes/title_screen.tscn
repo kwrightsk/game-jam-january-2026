@@ -1,8 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://uli6lbh0bcn2"]
+[gd_scene load_steps=11 format=3 uid="uid://cbhmpky7sviob"]
 
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_l2qgg"]
 [ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_vtpvt"]
 [ext_resource type="PackedScene" uid="uid://qh5j8imflq6k" path="res://Scenes/paintbrush_cursor.tscn" id="3_awoib"]
+[ext_resource type="Texture2D" uid="uid://cqngkywrgde0e" path="res://assets/redSquare.png" id="3_gmxyc"]
+[ext_resource type="Texture2D" uid="uid://dnuyptsu218vr" path="res://assets/blueSquare.png" id="4_5wapx"]
+[ext_resource type="Texture2D" uid="uid://cnn85cu4wjht3" path="res://assets/yellowSquare.png" id="5_4x8na"]
+[ext_resource type="Texture2D" uid="uid://h4odx0bgt5a2" path="res://assets/greenSquare.png" id="6_74du3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aac5u"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.133333, 0.694118, 0.298039, 1)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0m3at"]
+bg_color = Color(0.247059, 0.282353, 0.8, 0.521569)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.247059, 0.282353, 0.8, 1)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxx3x"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -36,6 +64,18 @@ offset_right = 1150.0
 offset_bottom = 647.0
 mouse_filter = 1
 
+[node name="LineEdit" type="LineEdit" parent="UI"]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 347.0
+offset_right = 888.0
+offset_bottom = 391.0
+theme_override_fonts/font = ExtResource("1_l2qgg")
+theme_override_styles/focus = SubResource("StyleBoxFlat_aac5u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0m3at")
+placeholder_text = "ANONYMOUS PLAYER 1"
+max_length = 15
+
 [node name="Title" type="RichTextLabel" parent="UI"]
 texture_filter = 1
 layout_mode = 1
@@ -45,9 +85,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -512.0
-offset_top = -91.5
+offset_top = -176.5
 offset_right = 512.0
-offset_bottom = -6.5
+offset_bottom = -91.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("1_l2qgg")
@@ -64,14 +104,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -350.5
-offset_top = 20.5
-offset_right = 350.5
-offset_bottom = 49.5
+offset_left = -444.0
+offset_top = -67.5
+offset_right = 444.0
+offset_bottom = -38.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("1_l2qgg")
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 25
 text = "Think you know colour? Think again."
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="UI"]
@@ -88,6 +128,23 @@ grow_horizontal = 2
 theme_override_fonts/normal_font = ExtResource("1_l2qgg")
 bbcode_enabled = true
 text = "[color=#ED1C24]A CATNIP CREATIONS GAME[/color]"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="UI"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -314.0
+offset_top = -282.0
+offset_right = 280.0
+offset_bottom = -265.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("1_l2qgg")
+text = "ENTER YOUR NAME:"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="UI"]
 texture_filter = 1
@@ -108,9 +165,9 @@ text = "* Not suitable for colour blind players. Ironic, hey? *"
 
 [node name="PlayButton" type="TextureButton" parent="."]
 offset_left = 481.0
-offset_top = 411.0
+offset_top = 460.0
 offset_right = 652.0
-offset_bottom = 476.0
+offset_bottom = 525.0
 mouse_filter = 1
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="PlayButton"]
@@ -146,5 +203,55 @@ mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_xxx3x")
 
 [node name="PaintbrushCursor" parent="." instance=ExtResource("3_awoib")]
+
+[node name="GreenSquare2" type="Sprite2D" parent="."]
+position = Vector2(914, 507)
+scale = Vector2(0.242432, 0.242432)
+texture = ExtResource("6_74du3")
+
+[node name="GreenSquare" type="Sprite2D" parent="."]
+position = Vector2(75, 511)
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("6_74du3")
+
+[node name="BlueSquare2" type="Sprite2D" parent="."]
+position = Vector2(996, 85)
+scale = Vector2(0.273041, 0.273041)
+texture = ExtResource("4_5wapx")
+
+[node name="BlueSquare" type="Sprite2D" parent="."]
+position = Vector2(126, 398)
+scale = Vector2(0.226563, 0.226563)
+texture = ExtResource("4_5wapx")
+
+[node name="RedSquare2" type="Sprite2D" parent="."]
+position = Vector2(1024, 458)
+scale = Vector2(0.301174, 0.301174)
+texture = ExtResource("3_gmxyc")
+
+[node name="RedSquare3" type="Sprite2D" parent="."]
+position = Vector2(173, 96)
+scale = Vector2(0.151954, 0.151954)
+texture = ExtResource("3_gmxyc")
+
+[node name="RedSquare" type="Sprite2D" parent="."]
+position = Vector2(197, 485)
+scale = Vector2(0.144531, 0.144531)
+texture = ExtResource("3_gmxyc")
+
+[node name="YellowSquare2" type="Sprite2D" parent="."]
+position = Vector2(1085, 558)
+scale = Vector2(0.152824, 0.152824)
+texture = ExtResource("5_4x8na")
+
+[node name="YellowSquare3" type="Sprite2D" parent="."]
+position = Vector2(78, 61)
+scale = Vector2(0.252193, 0.252193)
+texture = ExtResource("5_4x8na")
+
+[node name="YellowSquare" type="Sprite2D" parent="."]
+position = Vector2(1088, 46)
+scale = Vector2(0.175781, 0.175781)
+texture = ExtResource("5_4x8na")
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
