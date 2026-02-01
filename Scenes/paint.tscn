@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://id30r6jh5ic6"]
+[gd_scene load_steps=2 format=3 uid="uid://id30r6jh5ic6"]
+
+[ext_resource type="Texture2D" uid="uid://dtvexav48peiw" path="res://assets/paint.png" id="1_tylwf"]
 
 [node name="Paint" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_tylwf")
