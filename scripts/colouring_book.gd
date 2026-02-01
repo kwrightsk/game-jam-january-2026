@@ -7,6 +7,13 @@ func _ready() -> void:
 	pass
 	#$MinigameTimer.start()
 	#$BugSpawnTimer.start()
+	
+func _physics_process(delta: float) -> void:
+	if Input.is_action_pressed("MOUSE_BUTTON_LEFT"):
+		var paint_instance = paint.instantiate()
+		paint_instance.position = get_global_mouse_position()
+		add_child(paint_instance)
+		print("hi")
 
 func _on_minigame_timer_timeout() -> void:
 	print("you suck")
