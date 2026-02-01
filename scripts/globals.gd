@@ -1,6 +1,7 @@
 extends Node
 
 var round = 1
+var player_name = "player"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
