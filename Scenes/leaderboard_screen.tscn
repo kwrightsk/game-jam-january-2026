@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b76asufaca6tq"]
+[gd_scene load_steps=6 format=3 uid="uid://liwpgy23v8in"]
 
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_3o3f0"]
 
@@ -179,6 +179,7 @@ visible = false
 layout_mode = 0
 offset_right = 172.0
 offset_bottom = 65.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_cn05g")
 
 [connection signal="mouse_entered" from="CanvasLayer/BackButton" to="." method="_on_back_button_mouse_entered"]
