@@ -12,6 +12,10 @@ offset_left = 400.0
 offset_right = 560.0
 offset_bottom = 63.0
 text = "Click on this colour:"
+metadata/_edit_use_anchors_ = true
+
+[node name="clickMe" parent="." instance=ExtResource("2_cqqjx")]
+position = Vector2(652, 73)
 
 [node name="clickables" type="Node" parent="."]
 
@@ -26,6 +30,3 @@ position = Vector2(317, 543)
 
 [node name="interactableColour4" parent="clickables" instance=ExtResource("2_cqqjx")]
 position = Vector2(785, 518)
-
-[node name="clickMe" parent="." instance=ExtResource("2_cqqjx")]
-position = Vector2(652, 73)

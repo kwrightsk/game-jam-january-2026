@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2aramtbfm6t5"]
+
+[ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_b7mhs"]
+[ext_resource type="PackedScene" uid="uid://b46h2qeluiuqj" path="res://Scenes/interactable_colour.tscn" id="2_62n0n"]
+
+[node name="WordPicker" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 370.0
+offset_top = 41.0
+offset_right = 786.0
+offset_bottom = 104.0
+theme_override_fonts/font = ExtResource("1_b7mhs")
+text = "Click on the color you see"
+metadata/_edit_use_anchors_ = true
+
+[node name="clickMe" parent="CanvasLayer" instance=ExtResource("2_62n0n")]
+position = Vector2(574, 141)
+
+[node name="clickables" type="Node" parent="CanvasLayer"]
+
+[node name="interactableColour" parent="CanvasLayer/clickables" instance=ExtResource("2_62n0n")]
+position = Vector2(176, 322)
+
+[node name="interactableColour2" parent="CanvasLayer/clickables" instance=ExtResource("2_62n0n")]
+position = Vector2(369, 321)
+
+[node name="interactableColour3" parent="CanvasLayer/clickables" instance=ExtResource("2_62n0n")]
+position = Vector2(568, 321)
+
+[node name="interactableColour4" parent="CanvasLayer/clickables" instance=ExtResource("2_62n0n")]
+position = Vector2(772, 320)
+
+[node name="interactableColour5" parent="CanvasLayer/clickables" instance=ExtResource("2_62n0n")]
+position = Vector2(966, 321)
+
+[node name="interactableColour6" parent="CanvasLayer/clickables" instance=ExtResource("2_62n0n")]
+position = Vector2(175, 487)
+
+[node name="interactableColour7" parent="CanvasLayer/clickables" instance=ExtResource("2_62n0n")]
+position = Vector2(367, 488)
+
+[node name="interactableColour8" parent="CanvasLayer/clickables" instance=ExtResource("2_62n0n")]
+position = Vector2(572, 489)
+
+[node name="interactableColour9" parent="CanvasLayer/clickables" instance=ExtResource("2_62n0n")]
+position = Vector2(773, 489)
+
+[node name="interactableColour10" parent="CanvasLayer/clickables" instance=ExtResource("2_62n0n")]
+position = Vector2(970, 489)
