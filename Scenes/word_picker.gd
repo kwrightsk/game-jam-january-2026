@@ -9,6 +9,8 @@ var colours = {
 var color_names = ["red", "green", "blue", "yellow"]
 var matched = false
 var selected_colour = ""
+@export var round_path: NodePath
+@onready var round = get_node(round_path)
 
 func _ready() -> void:
 	# Hide everything at start
@@ -29,7 +31,7 @@ func start_game() -> void:
 	
 	matched = false
 	selected_colour = ""
-	
+	round.text = "Round "+ str(Globals.round)
 	set_random_word()
 	rand_colours()
 

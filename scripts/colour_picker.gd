@@ -37,10 +37,9 @@ func start_game() -> void:
 	#set new target colour
 	click_me.set_Colour(colours.pick_random())
 	selected_colour = click_me.get_Colour()
-	
+	round.text = "Round "+ str(Globals.round)
 	#randomize clickable colours
 	rand_colours()
-	round.text = "Round "+ str(Globals.round)
 
 func rand_colours():
 	var children = $clickables.get_children()

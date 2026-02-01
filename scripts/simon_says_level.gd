@@ -4,6 +4,8 @@ extends Node2D
 @onready var PixelTwo = $SimonSaysPixel2
 @onready var PixelThree = $SimonSaysPixel3
 @onready var PixelFour = $SimonSaysPixel4
+@export var round_path: NodePath
+@onready var round = get_node(round_path)
 
 var pattern = []
 var numbers = [1, 2, 3, 4]
@@ -47,7 +49,8 @@ func start_game() -> void:
 	for i in range(pattern_length):
 		pattern.append(pick_number())
 	print(pattern)
-	
+	round.text = "Round "+ str(Globals.round)
+
 	#show the pattern 
 	await show_pattern()
 

@@ -6,6 +6,7 @@
 
 [node name="SimonSaysLevel" type="Node2D"]
 script = ExtResource("2_3ww8m")
+round_path = NodePath("Round")
 
 [node name="SimonSaysPixel" parent="." instance=ExtResource("2_qgo7r")]
 position = Vector2(493, 262)
