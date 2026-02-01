@@ -1,10 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://8qdw8mq7yxqf"]
+[gd_scene load_steps=4 format=3 uid="uid://8qdw8mq7yxqf"]
 
+[ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="2_0cifk"]
 [ext_resource type="Script" path="res://scripts/simon_says_level.gd" id="2_3ww8m"]
 [ext_resource type="PackedScene" uid="uid://dx7y7yfnal5wc" path="res://Scenes/simon_says_pixel.tscn" id="2_qgo7r"]
 
 [node name="SimonSaysLevel" type="Node2D"]
 script = ExtResource("2_3ww8m")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 307.0
+offset_top = 62.0
+offset_right = 980.0
+offset_bottom = 177.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_0cifk")
+theme_override_font_sizes/font_size = 30
+text = "follow the pattern"
 
 [node name="SimonSaysPixel" parent="." instance=ExtResource("2_qgo7r")]
 position = Vector2(493, 262)
