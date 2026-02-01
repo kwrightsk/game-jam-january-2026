@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl5wnl1jid5jc"]
+
+[ext_resource type="Texture2D" uid="uid://cvd6jy0h0m8hm" path="res://assets/bug.png" id="1_o7r4c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y83hf"]
+radius = 9.01388
+
+[node name="ColourEaterBug" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_y83hf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0.5, 1.5)
+scale = Vector2(1.03125, 1.09375)
+texture = ExtResource("1_o7r4c")
