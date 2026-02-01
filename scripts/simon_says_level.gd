@@ -35,6 +35,7 @@ func _ready() -> void:
 			area.input_event.connect(_on_pixel_clicked.bind(pixel))
 
 func start_game() -> void:
+	self.visible = true 
 	#reset game state
 	pattern = []
 	pattern_pos = 0

@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var simon_says = $SimonSaysLevel
 @onready var colour_picker = $ColourPicker
+@onready var word_picker = $WordPicker
 #@onready var score_label = $ScoreLabel
 #@onready var game_over_label = $GameOverLabel
 
@@ -12,7 +13,7 @@ func _ready():
 	print("Children of main_level:")
 	for child in get_children():
 		print("  - ", child.name)
-	mini_games = [simon_says, colour_picker]
+	mini_games = [simon_says, colour_picker, word_picker]
 	#game_over_label.visible = false
 	
 	#reset score
@@ -27,6 +28,8 @@ func load_random_minigame():
 	for game in mini_games:
 		print("hiding", game)
 		game.visible = false
+		if game.has_method("hide_game"):
+			game.hide_game()
 	
 	#pick random one (avoid repeating if possible)
 	var next_game = mini_games.pick_random()
@@ -59,6 +62,5 @@ func game_over():
 	load("res://Scenes/game-over-screen.tscn")
 	get_tree().change_scene_to_file("res://Scenes/game-over-screen.tscn")
 	
-
 #func update_score():
 	#score_label.text = "Score: " + str(Globals.score)
