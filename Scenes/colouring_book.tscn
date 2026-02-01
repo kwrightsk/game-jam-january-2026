@@ -16,8 +16,10 @@ wait_time = 2.0
 wait_time = 10.0
 
 [node name="Background" type="CanvasLayer" parent="."]
+layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="Background"]
+z_index = -3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -25,7 +27,7 @@ offset_right = -1080.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(16.04, 1)
-color = Color(0.171, 0.12, 0.3, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="MinigamePrompt" type="Label" parent="Background/ColorRect"]
 layout_direction = 1
@@ -44,6 +46,7 @@ theme_override_fonts/font = ExtResource("3_xinx8")
 text = "Draw over the screen!"
 
 [node name="TimeLabel" type="Label" parent="Background/ColorRect"]
+visible = false
 layout_mode = 0
 offset_left = 0.935162
 offset_top = 7.0
@@ -54,6 +57,7 @@ theme_override_fonts/font = ExtResource("3_xinx8")
 text = "Time:"
 
 [node name="Paint" parent="." instance=ExtResource("2_vs0pb")]
+visible = false
 script = ExtResource("1_45ish")
 
 [node name="ColourEaterBug" parent="." instance=ExtResource("2_fofd4")]
