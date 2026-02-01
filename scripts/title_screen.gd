@@ -2,11 +2,13 @@ extends Node2D
 
 @onready var name_field = $UI/LineEdit
 @onready var hover_play_button = $PlayButton/Panel2
+@onready var hover_credit_button = $CreditsButton/Panel2
 @onready var button_sound = $PlayButton/AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hover_play_button.visible = false
+	hover_credit_button.visible = false
 	if(Globals.player_name == name_field.placeholder_text):
 		name_field.text = ""
 	else:
@@ -25,14 +27,25 @@ func _on_play_button_pressed() -> void:
 	await get_tree().create_timer(0.3).timeout
 	get_tree().change_scene_to_file("res://Scenes/main_level.tscn")
 
-func _on_play_button_mouse_entered() -> void:
-	hover_play_button.visible = true
-
-func _on_play_button_mouse_exited() -> void:
-	hover_play_button.visible = false
 
 func _on_credits_button_pressed() -> void:
 	button_sound.play()
 	await get_tree().create_timer(0.3).timeout
 	load("res://Scenes/credits.tscn") 
 	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
+
+
+func _on_credits_button_mouse_entered() -> void:
+	hover_credit_button.visible = true
+
+
+func _on_credits_button_mouse_exited() -> void:
+	hover_credit_button.visible = false
+
+
+func _on_play_button_mouse_entered() -> void:
+	hover_play_button.visible = true
+
+
+func _on_play_button_mouse_exited() -> void:
+	hover_play_button.visible = false
