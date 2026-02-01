@@ -26,7 +26,7 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color(1, 1, 1, 1)
 
-[node name="Game-over-screen" type="Node2D"]
+[node name="Game-over-screen2" type="Node2D"]
 script = SubResource("GDScript_72w33")
 
 [node name="Background" type="CanvasLayer" parent="."]

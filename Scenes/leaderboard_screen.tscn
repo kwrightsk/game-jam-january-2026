@@ -44,6 +44,7 @@ func _construct_player_string(data_dict : Dictionary, index: int) -> String:
 	var space_add = \"\"
 	for i in range(max(space_offset, 1)):  
 		space_add += \" \"
+	print(\"heyooo\")
 	
 	#build the string with name first, then spaces, then colored score
 	var player_substring = plr_name + space_add
@@ -52,7 +53,6 @@ func _construct_player_string(data_dict : Dictionary, index: int) -> String:
 	return player_substring + stats_string
 	
 func _on_back_button_pressed() -> void:
-	print(\"back_button\")
 	get_tree().change_scene_to_file(\"res://Scenes/game-over-screen.tscn\") # Replace with function body.
 	
 func _on_back_button_mouse_entered() -> void:
