@@ -39,7 +39,7 @@ offset_right = 797.0
 offset_bottom = 262.0
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("2_wrc73")
-text = "Click on the shape you see"
+text = "Click on the color of the shape you see"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
