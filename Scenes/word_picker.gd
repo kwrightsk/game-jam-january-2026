@@ -1,12 +1,12 @@
 extends Node
 
 var colours = {
-	"RED": Color.RED,
-	"GREEN": Color.LIME_GREEN,
-	"BLUE": Color.BLUE,
-	"YELLOW": Color.YELLOW
+	"red": Color.RED,
+	"green": Color.LIME_GREEN,
+	"blue": Color.BLUE,
+	"yellow": Color.YELLOW
 }
-var color_names = ["RED", "GREEN", "BLUE", "YELLOW"]
+var color_names = ["red", "green", "blue", "yellow"]
 var matched = false
 var selected_colour = ""
 
@@ -21,7 +21,6 @@ func _ready() -> void:
 		selected_colour = c.get_Colour()
 		print(selected_colour)
 	rand_colours()
-	
 	for c in $CanvasLayer/squares.get_children():
 		c.colourClicked.connect(_on_colour_clicked)
 	
