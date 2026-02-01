@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=3 format=3 uid="uid://3esa31n8jgl0"]
-=======
-[gd_scene load_steps=3 format=3 uid="uid://dx7y7yfnal5wc"]
->>>>>>> main
+[gd_scene load_steps=3 format=3 uid="uid://dd8rt1iu44opg"]
 
 [ext_resource type="Script" path="res://scripts/simon_says_pixel.gd" id="1_wj33a"]
 

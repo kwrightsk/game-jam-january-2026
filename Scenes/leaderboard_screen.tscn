@@ -1,6 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://b76asufaca6tq"]
+[gd_scene load_steps=5 format=3 uid="uid://b76asufaca6tq"]
 
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_3o3f0"]
+
+[sub_resource type="GDScript" id="GDScript_np64g"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func _on_back_button_pressed() -> void:
+	print(\"back_button\")
+	get_tree().change_scene_to_file(\"res://Scenes/title_screen.tscn\") # Replace with function body.
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kj02u"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -10,7 +28,7 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color(1, 1, 1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gq3u"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ej07j"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 10
 border_width_top = 10
@@ -19,6 +37,7 @@ border_width_bottom = 10
 border_color = Color(1, 1, 1, 1)
 
 [node name="LeaderboardScreen" type="Node2D"]
+script = SubResource("GDScript_np64g")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -58,39 +77,43 @@ theme_override_font_sizes/font_size = 50
 text = "LEADER BOARD"
 horizontal_alignment = 1
 
-[node name="TextureButton3" type="TextureButton" parent="CanvasLayer"]
-offset_left = 636.0
-offset_top = 439.0
-offset_right = 807.0
-offset_bottom = 504.0
+[node name="BackButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 500.0
+offset_top = 544.0
+offset_right = 671.0
+offset_bottom = 609.0
+mouse_filter = 1
 
-[node name="Panel" type="Panel" parent="CanvasLayer/TextureButton3"]
+[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer/BackButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -12.5
+offset_right = 50.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_3o3f0")
+theme_override_font_sizes/normal_font_size = 25
+text = "BACK"
+
+[node name="Panel" type="Panel" parent="CanvasLayer/BackButton"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -3.412
 anchor_top = -2.669
 anchor_right = -3.412
 anchor_bottom = -2.669
-offset_left = 454.452
-offset_top = 281.485
-offset_right = 612.452
-offset_bottom = 350.485
-theme_override_styles/panel = SubResource("StyleBoxFlat_7gq3u")
+offset_left = 583.452
+offset_top = 173.485
+offset_right = 755.452
+offset_bottom = 238.485
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ej07j")
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer/TextureButton3"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.135
-anchor_top = 2.308
-anchor_right = -0.135
-anchor_bottom = 2.308
-offset_left = -73.915
-offset_top = -17.02
-offset_right = 45.085
-offset_bottom = 8.98
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("1_3o3f0")
-theme_override_font_sizes/normal_font_size = 25
-text = "BACK"
+[connection signal="pressed" from="CanvasLayer/BackButton" to="." method="_on_back_button_pressed"]
