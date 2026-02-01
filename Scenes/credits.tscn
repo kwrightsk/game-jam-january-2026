@@ -233,6 +233,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_bxmvo")
 
 [node name="Panel2" type="Panel" parent="BackButton"]
 visible = false
+layout_mode = 0
 offset_top = -3.0
 offset_right = 172.0
 offset_bottom = 62.0

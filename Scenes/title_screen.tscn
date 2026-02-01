@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cbhmpky7sviob"]
+[gd_scene load_steps=15 format=3 uid="uid://uli6lbh0bcn2"]
 
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_l2qgg"]
 [ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_vtpvt"]
@@ -42,12 +42,12 @@ border_width_bottom = 10
 border_color = Color(0.929412, 0.109804, 0.141176, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnaej"]
-bg_color = Color(0.929412, 0.109804, 0.141176, 0.784314)
+bg_color = Color(1, 0.952941, 0.00784314, 0.490196)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
-border_color = Color(0.929412, 0.109804, 0.141176, 1)
+border_color = Color(1, 0.952941, 0.00784314, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l5x8h"]
 bg_color = Color(0.929412, 0.109804, 0.141176, 0)
@@ -58,12 +58,12 @@ border_width_bottom = 10
 border_color = Color(0.929412, 0.109804, 0.141176, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxx3x"]
-bg_color = Color(0.929412, 0.109804, 0.141176, 0.784314)
+bg_color = Color(0.133333, 0.694118, 0.298039, 0.490196)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
-border_color = Color(0.929412, 0.109804, 0.141176, 1)
+border_color = Color(0.133333, 0.694118, 0.298039, 1)
 
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_vtpvt")
