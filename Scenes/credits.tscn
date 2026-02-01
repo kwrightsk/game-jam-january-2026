@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7u263d0poau0"]
+[gd_scene load_steps=11 format=3 uid="uid://b7u263d0poau0"]
 
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_egcpq"]
 [ext_resource type="Texture2D" uid="uid://h4odx0bgt5a2" path="res://assets/greenSquare.png" id="1_f8kxh"]
@@ -23,6 +23,14 @@ border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.929412, 0.109804, 0.141176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vald"]
+bg_color = Color(0.247059, 0.282353, 0.796078, 0.490196)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.247059, 0.282353, 0.796078, 1)
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_fy7n0")
@@ -190,7 +198,6 @@ offset_left = 512.0
 offset_top = 545.0
 offset_right = 683.0
 offset_bottom = 610.0
-mouse_filter = 1
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="BackButton"]
 texture_filter = 1
@@ -224,7 +231,17 @@ offset_bottom = 235.485
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_bxmvo")
 
+[node name="Panel2" type="Panel" parent="BackButton"]
+visible = false
+offset_top = -3.0
+offset_right = 172.0
+offset_bottom = 62.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vald")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BackButton"]
 stream = ExtResource("7_eoveu")
 
+[connection signal="mouse_entered" from="BackButton" to="." method="_on_back_button_mouse_entered"]
+[connection signal="mouse_exited" from="BackButton" to="." method="_on_back_button_mouse_exited"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
