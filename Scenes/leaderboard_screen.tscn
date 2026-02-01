@@ -33,7 +33,7 @@ func _construct_player_string(data_dict : Dictionary, index: int) -> String:
 	var score = data_dict[\"Score\"]
 	var s_txt = str(score)
 	
-	var colors = [\"#ff0000\", \"#0000ff\", \"#ffff00\", \"#00ff00\"]
+	var colors = [\"#ED1C25\", \"#3F48CC\", \"#FFF204\", \"#22B14C\"]
 	var color = colors[index % 4]
 	
 	var max_name_width = 15
