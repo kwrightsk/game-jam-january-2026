@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b46ftpomv0jk8"]
+[gd_scene load_steps=6 format=3 uid="uid://b46ftpomv0jk8"]
 
 [ext_resource type="Script" path="res://scripts/game_over_screen.gd" id="1_lfbmt"]
 [ext_resource type="Texture2D" uid="uid://ba6mo6y6urtm7" path="res://assets/shirt-1671181932-5abe8617e0731d1ab2d8b2f6a6602d1e.webp" id="2_7eqmw"]
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="3_f5e0u"]
+[ext_resource type="PackedScene" uid="uid://qh5j8imflq6k" path="res://Scenes/paintbrush_cursor.tscn" id="4_yg52f"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_8bfl2"]
 
@@ -228,6 +229,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -49.5
+offset_top = -12.5
+offset_right = 271.5
+offset_bottom = 12.5
 offset_left = -39.5
 offset_top = -13.5
 offset_right = 281.5
@@ -236,6 +241,21 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("3_f5e0u")
 theme_override_font_sizes/normal_font_size = 25
+text = "LEADER BOARD"
+
+[node name="Panel" type="Panel" parent="LeaderBoardButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.412
+anchor_top = -2.669
+anchor_right = -3.412
+anchor_bottom = -2.669
+offset_left = 583.452
+offset_top = 173.485
+offset_right = 943.452
+offset_bottom = 237.485
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_1fduq")
 text = "LEADERBOARD"
 
 [connection signal="mouse_entered" from="MainMenuButton" to="." method="_on_main_menu_button_mouse_entered"]

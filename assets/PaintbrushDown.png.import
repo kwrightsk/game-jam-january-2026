@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hd1i33uomjmi"
-path="res://.godot/imported/paintbrush-cursor.png-6f09e350d5cfe1f168acee07482f3e58.ctex"
+uid="uid://63l40rvh0dg"
+path="res://.godot/imported/PaintbrushDown.png-38a2be11b0e18b8a6b985672f5038a6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/paintbrush-cursor.png"
-dest_files=["res://.godot/imported/paintbrush-cursor.png-6f09e350d5cfe1f168acee07482f3e58.ctex"]
+source_file="res://assets/PaintbrushDown.png"
+dest_files=["res://.godot/imported/PaintbrushDown.png-38a2be11b0e18b8a6b985672f5038a6b.ctex"]
 
 [params]
 

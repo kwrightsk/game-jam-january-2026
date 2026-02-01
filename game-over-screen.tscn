@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bl7o3m11utorw"]
+[gd_scene load_steps=6 format=3 uid="uid://bl7o3m11utorw"]
 
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_0wk6x"]
 [ext_resource type="Script" path="res://game_over_screen.gd" id="1_sgb16"]
 [ext_resource type="Texture2D" uid="uid://ba6mo6y6urtm7" path="res://assets/shirt-1671181932-5abe8617e0731d1ab2d8b2f6a6602d1e.webp" id="2_r5a24"]
+[ext_resource type="PackedScene" uid="uid://qh5j8imflq6k" path="res://Scenes/paintbrush_cursor.tscn" id="3_qbx45"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvsqo"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -176,3 +177,5 @@ theme_override_fonts/normal_font = ExtResource("1_0wk6x")
 theme_override_font_sizes/normal_font_size = 25
 text = "MAIN MENU
 "
+
+[node name="PaintbrushCursor" parent="." instance=ExtResource("3_qbx45")]
