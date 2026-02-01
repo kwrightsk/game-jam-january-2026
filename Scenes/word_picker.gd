@@ -12,18 +12,17 @@ var selected_colour = ""
 
 var redo = preload("res://Scenes/colour_picker.tscn")
 
-@export var click_me_path: Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var rand_name = color_names.pick_random()
-	click_me_path.set_Colour(colours[rand_name])
-	selected_colour = click_me_path.get_Colour()
-	print(selected_colour)
+	for c in $CanvasLayer/squares.get_children():
+		c.set_Colour(rand_name)
+		selected_colour = c.get_Colour()
+		print(selected_colour)
 	rand_colours()
 	
-	for c in $squares.get_children():
-		print($sqaures.get_children())
+	for c in $CanvasLayer/squares.get_children():
 		c.colourClicked.connect(_on_colour_clicked)
 	
 
@@ -33,7 +32,7 @@ func _process(delta: float) -> void:
 	
 
 func rand_colours():
-	var children = $squares.get_children()
+	var children = $CanvasLayer/squares.get_children()
 
 	var shuffled_colours = color_names.duplicate()
 	shuffled_colours.shuffle()
@@ -45,8 +44,7 @@ func rand_colours():
 	pool.shuffle()
 
 	for i in range(children.size()):
-		children[i].set_Colour(colours[pool[i]]) # FIX HERE
-		children[i].colour_name = pool[i]
+		children[i].set_Colour(pool[i])
 		children[i].clickable = true
 
 func _on_colour_clicked(colour):
