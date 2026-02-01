@@ -7,23 +7,6 @@
 [node name="SimonSaysLevel" type="Node2D"]
 script = ExtResource("2_3ww8m")
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 307.0
-offset_top = 62.0
-offset_right = 980.0
-offset_bottom = 177.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_0cifk")
-theme_override_font_sizes/font_size = 30
-text = "follow the pattern"
-
 [node name="SimonSaysPixel" parent="." instance=ExtResource("2_qgo7r")]
 position = Vector2(493, 262)
 
@@ -35,3 +18,20 @@ position = Vector2(492, 442)
 
 [node name="SimonSaysPixel4" parent="." instance=ExtResource("2_qgo7r")]
 position = Vector2(668, 441)
+
+[node name="Round" type="Label" parent="."]
+offset_left = 870.0
+offset_top = 54.0
+offset_right = 1075.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("2_0cifk")
+text = "Round:"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 279.0
+offset_top = 115.0
+offset_right = 1119.0
+offset_bottom = 178.0
+theme_override_fonts/font = ExtResource("2_0cifk")
+theme_override_font_sizes/font_size = 30
+text = "Follow this pattern"

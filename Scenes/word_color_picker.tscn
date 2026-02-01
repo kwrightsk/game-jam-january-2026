@@ -18,15 +18,23 @@ grow_vertical = 2
 mouse_filter = 1
 color = Color(0, 0, 0, 1)
 
+[node name="Round" type="Label" parent="CanvasLayer/ColorRect"]
+offset_left = 870.0
+offset_top = 54.0
+offset_right = 1075.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("2_tqnll")
+text = "Round:"
+
 [node name="Instruction" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
-anchor_top = -0.121914
+anchor_top = -0.177469
 anchor_right = 0.0720486
 anchor_bottom = -0.177469
-offset_left = 327.0
-offset_top = 142.0
-offset_right = 743.0
-offset_bottom = 205.0
+offset_left = 338.0
+offset_top = 197.0
+offset_right = 754.0
+offset_bottom = 260.0
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("2_tqnll")
 text = "Click on the color word you see"
