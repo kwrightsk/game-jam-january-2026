@@ -43,8 +43,9 @@ func start_game() -> void:
 	
 	#difficulty set up - increase every 6 rounds starting from round 3
 	# Round 3: length 4, Round 6: length 5, Round 9: length 6, etc.
-	if Globals.round >= 3 and Globals.round % 6 == 0 and pattern_length < 10:
-		pattern_length += 1
+	pattern_length = 3 + int((Globals.round - 1) / 3)
+	if pattern_length > 10:
+		pattern_length = 10
 		
 	#generate new pattern
 	for i in range(pattern_length):
