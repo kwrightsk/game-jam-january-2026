@@ -55,6 +55,7 @@ func start_game() -> void:
 	
 	#show the pattern 
 	await show_pattern()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -102,6 +103,7 @@ func show_pattern():
 		await get_tree().create_timer(gap_time).timeout
 	
 	can_input = true
+	get_parent().start_timer()
 
 func get_pixel(num: int):
 	match num:

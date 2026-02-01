@@ -70,7 +70,8 @@ func on_minigame_complete():
 	load_random_minigame()
 	if Globals.round % 5 == 0:
 		$UI/Timer.max_value -= 1
-	$time.start()
+	if $SimonSaysLevel.visible == false:
+		start_timer()
 	
 
 func game_over():
@@ -157,3 +158,6 @@ func save_to_leaderboard():
 #helper function to compare scores (tbt to cmpt280 <3)
 func _compare_scores(player1, player2):
 	return player1["Score"] > player2["Score"]
+
+func start_timer():
+	$time.start()
