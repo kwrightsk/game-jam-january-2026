@@ -11,9 +11,6 @@ radius = 9.01388
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_y83hf")
 
-[node name="BugSpawnTimer" type="Timer" parent="."]
-wait_time = 2.0
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0.5, 1.5)

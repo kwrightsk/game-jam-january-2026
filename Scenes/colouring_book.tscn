@@ -1,19 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://djxt5qfv25rsi"]
+[gd_scene load_steps=6 format=3 uid="uid://djxt5qfv25rsi"]
 
 [ext_resource type="Script" path="res://scripts/colouring_book.gd" id="1_45ish"]
 [ext_resource type="PackedScene" uid="uid://bl5wnl1jid5jc" path="res://Scenes/colour_eater_bug.tscn" id="2_fofd4"]
 [ext_resource type="PackedScene" uid="uid://id30r6jh5ic6" path="res://Scenes/paint.tscn" id="2_vs0pb"]
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="3_xinx8"]
+[ext_resource type="PackedScene" uid="uid://qh5j8imflq6k" path="res://Scenes/paintbrush_cursor.tscn" id="5_hatgv"]
 
 [node name="ColouringBook" type="Node2D"]
 script = ExtResource("1_45ish")
 
-[node name="Paint" parent="." instance=ExtResource("2_vs0pb")]
+[node name="BugSpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
 
 [node name="MinigameTimer" type="Timer" parent="."]
 wait_time = 10.0
-
-[node name="ColourEaterBug" parent="." instance=ExtResource("2_fofd4")]
 
 [node name="Background" type="CanvasLayer" parent="."]
 
@@ -53,4 +53,12 @@ scale = Vector2(0.0881021, 1.76865)
 theme_override_fonts/font = ExtResource("3_xinx8")
 text = "Time:"
 
+[node name="Paint" parent="." instance=ExtResource("2_vs0pb")]
+script = ExtResource("1_45ish")
+
+[node name="ColourEaterBug" parent="." instance=ExtResource("2_fofd4")]
+
+[node name="PaintbrushCursor" parent="." instance=ExtResource("5_hatgv")]
+
+[connection signal="timeout" from="BugSpawnTimer" to="." method="_on_bug_spawn_timer_timeout"]
 [connection signal="timeout" from="MinigameTimer" to="." method="_on_minigame_timer_timeout"]
