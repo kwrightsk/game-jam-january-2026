@@ -20,13 +20,13 @@ color = Color(0, 0, 0, 1)
 
 [node name="Instruction" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
-anchor_top = -0.0601852
+anchor_top = -0.121914
 anchor_right = 0.0720486
-anchor_bottom = -0.121914
+anchor_bottom = -0.177469
 offset_left = 327.0
-offset_top = 104.0
+offset_top = 142.0
 offset_right = 743.0
-offset_bottom = 167.0
+offset_bottom = 205.0
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("2_tqnll")
 text = "Click on the color word you see"
