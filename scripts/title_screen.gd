@@ -18,3 +18,7 @@ func _on_play_button_pressed() -> void:
 	else:
 		Globals.set_player_name(name_field.text)
 	get_tree().change_scene_to_file("res://Scenes/main_level.tscn")
+
+func _on_credits_button_pressed() -> void:
+	load("res://Scenes/credits.tscn") 
+	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
