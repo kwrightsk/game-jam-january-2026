@@ -1,12 +1,10 @@
 extends Node2D
-
 @onready var PixelOne = $SimonSaysPixel
 @onready var PixelTwo = $SimonSaysPixel2
 @onready var PixelThree = $SimonSaysPixel3
 @onready var PixelFour = $SimonSaysPixel4
 @export var round_path: NodePath
 @onready var round = get_node(round_path)
-
 var pattern = []
 var numbers = [1, 2, 3, 4]
 var last_number = null #to make sure a number doesn't repeat more than two times in a row 
@@ -16,7 +14,6 @@ var pattern_pos = 0
 var show_time := 0.5 #for the pixel pattern
 var gap_time := 0.3 #for in between the pixels
 var wait_time := 1 #for the user to read instructions
-
 var can_input := false
 
 func _ready() -> void:
@@ -38,21 +35,27 @@ func _ready() -> void:
 
 func start_game() -> void:
 	self.visible = true 
+	
 	#reset game state
 	pattern = []
 	pattern_pos = 0
 	can_input = false
-	last_number = null
-	repeat_count = 0
 	
+	#difficulty set up - increase every 6 rounds starting from round 3
+	# Round 3: length 4, Round 6: length 5, Round 9: length 6, etc.
+	pattern_length = 3 + int((Globals.round - 1) / 3)
+	if pattern_length > 10:
+		pattern_length = 10
+		
 	#generate new pattern
 	for i in range(pattern_length):
 		pattern.append(pick_number())
-	print(pattern)
+	print("Generated pattern: ", pattern, " (length: ", pattern.size(), ")")
 	round.text = "Round "+ str(Globals.round)
-
+	
 	#show the pattern 
 	await show_pattern()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -73,6 +76,8 @@ func _on_pixel_clicked(viewport, event, shape_idx, pixel: Pixel):
 		# Re-enable input after checking (if not game over)
 		if pattern_pos < pattern.size():
 			can_input = true
+			get_parent().start_timer()
+			
 
 func check_player_input(pixel: Pixel):
 	print("Clicked: ", pixel.number, " | Expected: ", pattern[pattern_pos], " | Position: ", pattern_pos)
@@ -86,6 +91,7 @@ func check_player_input(pixel: Pixel):
 		if pattern_pos >= pattern.size():
 			print("Success! Full pattern clicked!")
 			Globals.round += 1
+			print("Incremented Globals.round to: ", Globals.round)
 			get_parent().on_minigame_complete()
 	
 func show_pattern():
@@ -99,6 +105,7 @@ func show_pattern():
 		await get_tree().create_timer(gap_time).timeout
 	
 	can_input = true
+	get_parent().start_timer()
 
 func get_pixel(num: int):
 	match num:
@@ -117,5 +124,8 @@ func pick_number():
 		repeat_count = 0
 	elif last_number == number:
 		repeat_count += 1
+	else:
+		repeat_count = 0
+		
 	last_number = number
 	return number

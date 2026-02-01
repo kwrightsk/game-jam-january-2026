@@ -1,23 +1,65 @@
-[gd_scene load_steps=5 format=3 uid="uid://b76asufaca6tq"]
+[gd_scene load_steps=6 format=3 uid="uid://b76asufaca6tq"]
 
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_3o3f0"]
 
 [sub_resource type="GDScript" id="GDScript_np64g"]
 script/source = "extends Node2D
-
+@onready var leaderboard = $CanvasLayer/Rank
+@onready var hover_back_button = $CanvasLayer/BackButton/Panel2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+	hover_back_button.visible = false
+	_display_leaderboard() # Replace with function body.
+	
+func _display_leaderboard() -> void:
+	var leaderboard_path := \"user://leaderboard.json\"
+		
+	#read stored data from JSON file
+	var file_string = FileAccess.get_file_as_string(leaderboard_path)
+	var data_list = JSON.parse_string(file_string)
+				
+	for i in range(min(data_list.size(), 10)):
+		leaderboard.append_text(str(i+1) + \".  \" + _construct_player_string(data_list[i], i) + \"\\n\")
+	
+	#display missing entries if there are less than 10 entries in the dictionary
+	if (data_list.size() < 10):
+		var missing = 10 - data_list.size()
+		for i in range(missing):
+			leaderboard.append_text(str(11 - missing + i) + \".  \" + \"---\")
+			if i < missing - 1:  # Don't add newline on the last entry
+				leaderboard.append_text(\"\\n\")
+	
+	
+func _construct_player_string(data_dict : Dictionary, index: int) -> String:	
+	var plr_name = data_dict[\"Name\"]
+	var score = data_dict[\"Score\"]
+	var s_txt = str(score)
+	
+	var colors = [\"#ED1C25\", \"#3F48CC\", \"#FFF204\", \"#22B14C\"]
+	var color = colors[index % 4]
+	
+	var max_name_width = 15
+	var space_offset = max_name_width - plr_name.length()
+	var space_add = \"\"
+	for i in range(max(space_offset, 1)):  
+		space_add += \" \"
+	
+	#build the string with name first, then spaces, then colored score
+	var player_substring = plr_name + space_add
+	var stats_string = \"[color=\" + color + \"]Score: \" + s_txt + \"[/color]\" 
+	
+	return player_substring + stats_string
+	
 func _on_back_button_pressed() -> void:
 	print(\"back_button\")
 	get_tree().change_scene_to_file(\"res://Scenes/game-over-screen.tscn\") # Replace with function body.
+	
+func _on_back_button_mouse_entered() -> void:
+	hover_back_button.visible = true
+	
+func _on_back_button_mouse_exited() -> void:
+	hover_back_button.visible = false
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kj02u"]
@@ -35,6 +77,14 @@ border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cn05g"]
+bg_color = Color(0.6, 0.6, 0.6, 0.490196)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.133333, 0.694118, 0.298039, 1)
 
 [node name="LeaderboardScreen" type="Node2D"]
 script = SubResource("GDScript_np64g")
@@ -61,6 +111,14 @@ offset_right = 5037.62
 offset_bottom = 2246.51
 theme_override_styles/panel = SubResource("StyleBoxFlat_kj02u")
 
+[node name="Rank" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 224.0
+offset_top = 174.0
+offset_right = 1046.0
+offset_bottom = 488.0
+theme_override_fonts/normal_font = ExtResource("1_3o3f0")
+theme_override_font_sizes/normal_font_size = 25
+
 [node name="Title" type="Label" parent="CanvasLayer"]
 anchors_preset = 10
 anchor_right = 1.0
@@ -74,7 +132,7 @@ pivot_offset = Vector2(60, 60)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_3o3f0")
 theme_override_font_sizes/font_size = 50
-text = "LEADER BOARD"
+text = "LEADERBOARD"
 horizontal_alignment = 1
 
 [node name="BackButton" type="TextureButton" parent="CanvasLayer"]
@@ -116,4 +174,13 @@ offset_bottom = 238.485
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_ej07j")
 
+[node name="Panel2" type="Panel" parent="CanvasLayer/BackButton"]
+visible = false
+layout_mode = 0
+offset_right = 172.0
+offset_bottom = 65.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cn05g")
+
+[connection signal="mouse_entered" from="CanvasLayer/BackButton" to="." method="_on_back_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/BackButton" to="." method="_on_back_button_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/BackButton" to="." method="_on_back_button_pressed"]

@@ -1,6 +1,7 @@
 extends Node
 
 var round = 1
+var player_name = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,3 +11,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func set_player_name(name: String):
+	player_name = name
+
+func get_player_name(name: String):
+	return player_name
