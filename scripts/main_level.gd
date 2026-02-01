@@ -16,7 +16,7 @@ func _ready():
 		print("  - ", child.name)
 	mini_games = [simon_says, colour_picker, word_picker, color_word_picker]
 	#game_over_label.visible = false
-	
+	#$Timer.start()
 	#reset score
 	#Globals.reset_score()
 	#update_score()
@@ -48,9 +48,13 @@ func load_random_minigame():
 func on_minigame_complete():
 	#Globals.add_score(10)
 	#update_score()
+	$time.stop()
+	$UI/Timer.value = 0
 	print("success")
 	await get_tree().create_timer(0.7).timeout
 	load_random_minigame()
+	$time.start()
+	
 
 func game_over():
 	#game_over_label.visible = true
@@ -62,6 +66,11 @@ func game_over():
 		
 	load("res://Scenes/game-over-screen.tscn")
 	get_tree().change_scene_to_file("res://Scenes/game-over-screen.tscn")
-	
+
 #func update_score():
 	#score_label.text = "Score: " + str(Globals.score)
+
+
+func _on_time_timeout() -> void:
+	$UI/Timer.value+=1
+	#print(69)
