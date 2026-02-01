@@ -39,21 +39,13 @@ offset_right = 797.0
 offset_bottom = 262.0
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("2_wrc73")
-text = "Click on the first shape you see"
+text = "Click on the shape you see"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="SquareColor1" parent="CanvasLayer" instance=ExtResource("3_yk78y")]
-position = Vector2(496, 150)
-scale = Vector2(0.3, 0.3)
-
-[node name="SquareColor2" parent="CanvasLayer" instance=ExtResource("3_yk78y")]
-position = Vector2(574, 150)
-scale = Vector2(0.3, 0.3)
-
-[node name="SquareColor3" parent="CanvasLayer" instance=ExtResource("3_yk78y")]
-position = Vector2(648, 150)
-scale = Vector2(0.3, 0.3)
+position = Vector2(577, 150)
+scale = Vector2(2, 0.35)
 
 [node name="ColorWord" type="Label" parent="CanvasLayer"]
 offset_top = 117.0
@@ -67,7 +59,7 @@ horizontal_alignment = 1
 
 [node name="squares" type="Node" parent="CanvasLayer"]
 
-[node name="SquareColor1" parent="CanvasLayer/squares" instance=ExtResource("3_yk78y")]
+[node name="SquareColor11" parent="CanvasLayer/squares" instance=ExtResource("3_yk78y")]
 position = Vector2(176, 322)
 
 [node name="SquareColor2" parent="CanvasLayer/squares" instance=ExtResource("3_yk78y")]
