@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7u263d0poau0"]
+[gd_scene load_steps=10 format=3 uid="uid://b7u263d0poau0"]
 
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_egcpq"]
 [ext_resource type="Texture2D" uid="uid://h4odx0bgt5a2" path="res://assets/greenSquare.png" id="1_f8kxh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dnuyptsu218vr" path="res://assets/blueSquare.png" id="2_0xx05"]
 [ext_resource type="Texture2D" uid="uid://cqngkywrgde0e" path="res://assets/redSquare.png" id="3_uyvww"]
 [ext_resource type="Texture2D" uid="uid://cnn85cu4wjht3" path="res://assets/yellowSquare.png" id="4_jjvpg"]
+[ext_resource type="AudioStream" uid="uid://ce8ms38wc0phf" path="res://assets/sound_click.wav" id="7_eoveu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdq04"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -222,5 +223,8 @@ offset_right = 755.452
 offset_bottom = 235.485
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_bxmvo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BackButton"]
+stream = ExtResource("7_eoveu")
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
