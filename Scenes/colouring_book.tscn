@@ -27,7 +27,7 @@ offset_right = -1080.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(16.04, 1)
-color = Color(0.171, 0.12, 0.3, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="MinigamePrompt" type="Label" parent="Background/ColorRect"]
 layout_direction = 1
@@ -46,6 +46,7 @@ theme_override_fonts/font = ExtResource("3_xinx8")
 text = "Draw over the screen!"
 
 [node name="TimeLabel" type="Label" parent="Background/ColorRect"]
+visible = false
 layout_mode = 0
 offset_left = 0.935162
 offset_top = 7.0

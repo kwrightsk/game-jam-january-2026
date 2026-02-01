@@ -14,6 +14,9 @@ func _physics_process(delta: float) -> void:
 		paint_instance.position = get_global_mouse_position()
 		add_child(paint_instance)
 		print("hi")
+	
+	if Input.is_key_pressed(KEY_C):
+		queue_free()
 
 func _on_minigame_timer_timeout() -> void:
 	print("you suck")
