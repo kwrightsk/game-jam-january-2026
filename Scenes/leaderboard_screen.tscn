@@ -1,6 +1,4 @@
-
 [gd_scene load_steps=8 format=3 uid="uid://b76asufaca6tq"]
-
 
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_3o3f0"]
 [ext_resource type="AudioStream" uid="uid://b5yusuabt1q8v" path="res://assets/03_level_forest.mp3" id="2_kq17o"]
