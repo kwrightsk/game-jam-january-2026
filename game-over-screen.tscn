@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bl7o3m11utorw"]
+[gd_scene load_steps=6 format=3 uid="uid://cmv3sucybstpu"]
 
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_0wk6x"]
 [ext_resource type="Texture2D" uid="uid://ba6mo6y6urtm7" path="res://assets/shirt-1671181932-5abe8617e0731d1ab2d8b2f6a6602d1e.webp" id="2_r5a24"]
-[ext_resource type="PackedScene" uid="uid://qh5j8imflq6k" path="res://Scenes/paintbrush_cursor.tscn" id="3_qbx45"]
+[ext_resource type="PackedScene" path="res://Scenes/paintbrush_cursor.tscn" id="3_qbx45"]
 
 [sub_resource type="GDScript" id="GDScript_72w33"]
 script/source = "extends Node2D

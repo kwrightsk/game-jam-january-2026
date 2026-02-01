@@ -1,0 +1,164 @@
+[gd_scene load_steps=7 format=3 uid="uid://caw1v532lc363"]
+
+[ext_resource type="Texture2D" path="res://assets/paintbrush-cursor.png" id="1_ayd5y"]
+[ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="2_a4d3b"]
+[ext_resource type="Texture2D" uid="uid://h4odx0bgt5a2" path="res://assets/greenSquare.png" id="3_reqck"]
+[ext_resource type="Texture2D" uid="uid://dnuyptsu218vr" path="res://assets/blueSquare.png" id="4_wln68"]
+[ext_resource type="Texture2D" uid="uid://cqngkywrgde0e" path="res://assets/redSquare.png" id="5_dtlqh"]
+[ext_resource type="Texture2D" uid="uid://cnn85cu4wjht3" path="res://assets/yellowSquare.png" id="6_0i5m8"]
+
+[node name="TitleScreenPictureImage" type="Node2D"]
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+z_index = -2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="UI" type="Control" parent="."]
+z_index = -1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 647.0
+mouse_filter = 1
+
+[node name="Paintbrush-cursor" type="Sprite2D" parent="UI"]
+texture_filter = 1
+position = Vector2(815, 334.834)
+rotation = 0.207694
+scale = Vector2(12.125, 12.125)
+texture = ExtResource("1_ayd5y")
+
+[node name="Title" type="RichTextLabel" parent="UI"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -262.0
+offset_top = -85.5
+offset_right = 283.0
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_a4d3b")
+theme_override_font_sizes/normal_font_size = 85
+bbcode_enabled = true
+text = "[color=#ED1C24]C[/color][color=#FFF200]o[/color][color=#22B14C]l[/color][color=#3F48CC]o[/color][color=#ED1C24]u[/color][color=#FFF200]r[/color]
+[color=#22B14C]B[/color][color=#3F48CC]l[/color][color=#ED1C24]i[/color][color=#FFF200]n[/color][color=#22B14C]d[/color]
+"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="UI"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -415.0
+offset_top = 365.5
+offset_right = 473.0
+offset_bottom = 394.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_a4d3b")
+theme_override_font_sizes/normal_font_size = 25
+text = "Think you know colour? Think again."
+
+[node name="PlayButton" type="TextureButton" parent="."]
+offset_left = 481.0
+offset_top = 460.0
+offset_right = 652.0
+offset_bottom = 525.0
+mouse_filter = 1
+
+[node name="GreenSquare3" type="Sprite2D" parent="."]
+position = Vector2(594.935, 484.065)
+scale = Vector2(0.311991, 0.311991)
+texture = ExtResource("3_reqck")
+
+[node name="GreenSquare2" type="Sprite2D" parent="."]
+position = Vector2(759.031, 142.55)
+scale = Vector2(0.242432, 0.242432)
+texture = ExtResource("3_reqck")
+
+[node name="GreenSquare" type="Sprite2D" parent="."]
+position = Vector2(152, 499)
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("3_reqck")
+
+[node name="BlueSquare2" type="Sprite2D" parent="."]
+position = Vector2(798, 560)
+scale = Vector2(0.273041, 0.273041)
+texture = ExtResource("4_wln68")
+
+[node name="BlueSquare3" type="Sprite2D" parent="."]
+position = Vector2(545, 104)
+scale = Vector2(0.388977, 0.388977)
+texture = ExtResource("4_wln68")
+
+[node name="BlueSquare" type="Sprite2D" parent="."]
+position = Vector2(203, 386)
+scale = Vector2(0.226563, 0.226563)
+texture = ExtResource("4_wln68")
+
+[node name="RedSquare4" type="Sprite2D" parent="."]
+position = Vector2(976, 337)
+scale = Vector2(0.329576, 0.329576)
+texture = ExtResource("5_dtlqh")
+
+[node name="RedSquare5" type="Sprite2D" parent="."]
+position = Vector2(165, 264)
+scale = Vector2(0.357526, 0.357526)
+texture = ExtResource("5_dtlqh")
+
+[node name="RedSquare2" type="Sprite2D" parent="."]
+position = Vector2(888, 79)
+scale = Vector2(0.301174, 0.301174)
+texture = ExtResource("5_dtlqh")
+
+[node name="RedSquare3" type="Sprite2D" parent="."]
+position = Vector2(366.281, 167.281)
+scale = Vector2(0.151954, 0.151954)
+texture = ExtResource("5_dtlqh")
+
+[node name="RedSquare6" type="Sprite2D" parent="."]
+position = Vector2(702, 527)
+scale = Vector2(0.121164, 0.121164)
+texture = ExtResource("5_dtlqh")
+
+[node name="RedSquare" type="Sprite2D" parent="."]
+position = Vector2(274, 473)
+scale = Vector2(0.144531, 0.144531)
+texture = ExtResource("5_dtlqh")
+
+[node name="YellowSquare2" type="Sprite2D" parent="."]
+position = Vector2(930.031, 193.55)
+scale = Vector2(0.152824, 0.152824)
+texture = ExtResource("6_0i5m8")
+
+[node name="YellowSquare4" type="Sprite2D" parent="."]
+position = Vector2(421, 534)
+scale = Vector2(0.293838, 0.293838)
+texture = ExtResource("6_0i5m8")
+
+[node name="YellowSquare3" type="Sprite2D" parent="."]
+position = Vector2(271.281, 132.281)
+scale = Vector2(0.252193, 0.252193)
+texture = ExtResource("6_0i5m8")
+
+[node name="YellowSquare" type="Sprite2D" parent="."]
+position = Vector2(893.949, 505.5)
+scale = Vector2(0.175781, 0.175781)
+texture = ExtResource("6_0i5m8")

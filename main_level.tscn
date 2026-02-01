@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/main_level.gd" id="1_jejdx"]
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="2_ne4eq"]
 [ext_resource type="PackedScene" uid="uid://kdkv3jlo2bps" path="res://Scenes/colour_picker.tscn" id="3_s8sg6"]
-[ext_resource type="PackedScene" uid="uid://8qdw8mq7yxqf" path="res://Scenes/simon_says_level.tscn" id="4_5vndu"]
+[ext_resource type="PackedScene" uid="uid://dlih502icv61q" path="res://Scenes/simon_says_level.tscn" id="4_5vndu"]
 
 [node name="MainLevel2" type="Node2D"]
 script = ExtResource("1_jejdx")
