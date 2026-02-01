@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2aramtbfm6t5"]
+
+[ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_b7mhs"]
+[ext_resource type="Script" path="res://Scenes/word_picker.gd" id="1_x6pkk"]
+[ext_resource type="PackedScene" uid="uid://b46h2qeluiuqj" path="res://Scenes/interactable_colour.tscn" id="2_62n0n"]
+
+[node name="WordPicker" type="Node2D"]
+script = ExtResource("1_x6pkk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Instruction" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_top = -0.0601852
+anchor_bottom = -0.0601852
+offset_left = 370.0
+offset_top = 64.0
+offset_right = 786.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("1_b7mhs")
+text = "Click on the color you see"
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorWord" type="Label" parent="CanvasLayer"]
+offset_left = 481.0
+offset_top = 113.0
+offset_right = 708.0
+offset_bottom = 184.0
+theme_override_fonts/font = ExtResource("1_b7mhs")
+theme_override_font_sizes/font_size = 70
+text = "RED"
+
+[node name="squares" type="Node" parent="CanvasLayer"]
+
+[node name="SquareColor1" parent="CanvasLayer/squares" instance=ExtResource("2_62n0n")]
+position = Vector2(176, 322)
+
+[node name="SquareColor2" parent="CanvasLayer/squares" instance=ExtResource("2_62n0n")]
+position = Vector2(369, 321)
+
+[node name="SquareColor3" parent="CanvasLayer/squares" instance=ExtResource("2_62n0n")]
+position = Vector2(568, 321)
+
+[node name="SquareColor4" parent="CanvasLayer/squares" instance=ExtResource("2_62n0n")]
+position = Vector2(772, 320)
+
+[node name="SquareColor5" parent="CanvasLayer/squares" instance=ExtResource("2_62n0n")]
+position = Vector2(966, 321)
+
+[node name="SquareColor6" parent="CanvasLayer/squares" instance=ExtResource("2_62n0n")]
+position = Vector2(175, 487)
+
+[node name="SquareColor7" parent="CanvasLayer/squares" instance=ExtResource("2_62n0n")]
+position = Vector2(367, 488)
+
+[node name="SquareColor8" parent="CanvasLayer/squares" instance=ExtResource("2_62n0n")]
+position = Vector2(568, 490)
+
+[node name="SquareColor9" parent="CanvasLayer/squares" instance=ExtResource("2_62n0n")]
+position = Vector2(774, 486)
+
+[node name="SquareColor10" parent="CanvasLayer/squares" instance=ExtResource("2_62n0n")]
+position = Vector2(970, 489)
