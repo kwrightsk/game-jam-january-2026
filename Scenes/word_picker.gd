@@ -31,7 +31,7 @@ func start_game() -> void:
 	
 	matched = false
 	selected_colour = ""
-	round.text = "Round "+ str(Globals.round)
+	round.text = "Level "+ str(Globals.round)
 	set_random_word()
 	rand_colours()
 

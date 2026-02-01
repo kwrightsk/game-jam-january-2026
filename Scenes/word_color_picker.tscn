@@ -27,7 +27,7 @@ offset_top = 54.0
 offset_right = 1075.0
 offset_bottom = 85.0
 theme_override_fonts/font = ExtResource("2_tqnll")
-text = "Round:"
+text = "Level:"
 
 [node name="Instruction" type="Label" parent="CanvasLayer"]
 anchors_preset = -1

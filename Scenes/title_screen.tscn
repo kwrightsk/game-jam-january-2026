@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=16 format=3 uid="uid://cbhmpky7sviob"]
-
+[gd_scene load_steps=18 format=3 uid="uid://cbhmpky7sviob"]
 
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_l2qgg"]
 [ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_vtpvt"]
@@ -67,6 +65,22 @@ border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.133333, 0.694118, 0.298039, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgy2o"]
+bg_color = Color(0.929412, 0.109804, 0.141176, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0.239216, 0.00784314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3t4t0"]
+bg_color = Color(0.886275, 0.329412, 0.12549, 0.490196)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0.239216, 0.00784314, 1)
 
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_vtpvt")
@@ -316,7 +330,7 @@ scale = Vector2(0.242432, 0.242432)
 texture = ExtResource("6_74du3")
 
 [node name="GreenSquare" type="Sprite2D" parent="."]
-position = Vector2(75, 511)
+position = Vector2(76, 458)
 scale = Vector2(0.3125, 0.3125)
 texture = ExtResource("6_74du3")
 
@@ -326,7 +340,7 @@ scale = Vector2(0.273041, 0.273041)
 texture = ExtResource("4_5wapx")
 
 [node name="BlueSquare" type="Sprite2D" parent="."]
-position = Vector2(126, 398)
+position = Vector2(127, 349)
 scale = Vector2(0.226563, 0.226563)
 texture = ExtResource("4_5wapx")
 
@@ -341,7 +355,7 @@ scale = Vector2(0.151954, 0.151954)
 texture = ExtResource("3_gmxyc")
 
 [node name="RedSquare" type="Sprite2D" parent="."]
-position = Vector2(197, 485)
+position = Vector2(177, 498)
 scale = Vector2(0.144531, 0.144531)
 texture = ExtResource("3_gmxyc")
 
@@ -372,9 +386,67 @@ stream = ExtResource("8_a7vwq")
 autoplay = true
 parameters/looping = true
 
+[node name="Draw" type="TextureButton" parent="."]
+offset_left = 28.0
+offset_top = 522.0
+offset_right = 122.0
+offset_bottom = 565.0
+mouse_filter = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Draw"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -9.5
+offset_right = 48.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("1_l2qgg")
+theme_override_font_sizes/normal_font_size = 16
+text = "draw?"
+
+[node name="Panel" type="Panel" parent="Draw"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.412
+anchor_top = -2.669
+anchor_right = -3.412
+anchor_bottom = -2.669
+offset_left = 319.728
+offset_top = 117.767
+offset_right = 418.728
+offset_bottom = 155.767
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_cgy2o")
+
+[node name="Panel2" type="Panel" parent="Draw"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.412
+anchor_top = -2.669
+anchor_right = -3.412
+anchor_bottom = -2.669
+offset_left = 319.728
+offset_top = 116.767
+offset_right = 419.728
+offset_bottom = 154.767
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_3t4t0")
+
 [connection signal="mouse_entered" from="CreditsButton" to="." method="_on_credits_button_mouse_entered"]
 [connection signal="mouse_exited" from="CreditsButton" to="." method="_on_credits_button_mouse_exited"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="mouse_entered" from="PlayButton" to="." method="_on_play_button_mouse_entered"]
 [connection signal="mouse_exited" from="PlayButton" to="." method="_on_play_button_mouse_exited"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="Draw" to="." method="_on_draw_mouse_entered"]
+[connection signal="mouse_exited" from="Draw" to="." method="_on_draw_mouse_exited"]
+[connection signal="pressed" from="Draw" to="." method="_on_draw_pressed"]

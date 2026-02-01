@@ -51,7 +51,7 @@ func start_game() -> void:
 	for i in range(pattern_length):
 		pattern.append(pick_number())
 	print("Generated pattern: ", pattern, " (length: ", pattern.size(), ")")
-	round.text = "Round "+ str(Globals.round)
+	round.text = "Level "+ str(Globals.round)
 	
 	#show the pattern 
 	await show_pattern()

@@ -37,7 +37,7 @@ func start_game() -> void:
 	#set new target colour
 	click_me.set_Colour(colours.pick_random())
 	selected_colour = click_me.get_Colour()
-	round.text = "Round "+ str(Globals.round)
+	round.text = "Level "+ str(Globals.round)
 	#randomize clickable colours
 	rand_colours()
 

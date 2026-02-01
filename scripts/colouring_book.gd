@@ -30,6 +30,9 @@ func _on_bug_spawn_timer_timeout() -> void:
 	#bug_instance.rotatation_degrees = randf_range(-180, 180)
 	add_child(bug_instance)
 
-
 func _on_paint_child_entered_tree(node: Node) -> void:
 	pass
+
+func _on_back_button_pressed() -> void:
+	load("res://Scenes/title_screen.tscn")
+	get_tree().change_scene_to_file("res://Scenes/title_screen.tscn") # Replace with function body.
