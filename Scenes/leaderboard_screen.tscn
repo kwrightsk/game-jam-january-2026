@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://b76asufaca6tq"]
+[gd_scene load_steps=6 format=3 uid="uid://b76asufaca6tq"]
 
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_3o3f0"]
 
 [sub_resource type="GDScript" id="GDScript_np64g"]
 script/source = "extends Node2D
 @onready var leaderboard = $CanvasLayer/Rank
+@onready var hover_back_button = $CanvasLayer/BackButton/Panel2
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	hover_back_button.visible = false
 	_display_leaderboard() # Replace with function body.
 	
 func _display_leaderboard() -> void:
@@ -58,6 +61,12 @@ func _construct_player_string(data_dict : Dictionary, index: int) -> String:
 func _on_back_button_pressed() -> void:
 	print(\"back_button\")
 	get_tree().change_scene_to_file(\"res://Scenes/game-over-screen.tscn\") # Replace with function body.
+	
+func _on_back_button_mouse_entered() -> void:
+	hover_back_button.visible = true
+	
+func _on_back_button_mouse_exited() -> void:
+	hover_back_button.visible = false
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kj02u"]
@@ -75,6 +84,14 @@ border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cn05g"]
+bg_color = Color(0.6, 0.6, 0.6, 0.490196)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.133333, 0.694118, 0.298039, 1)
 
 [node name="LeaderboardScreen" type="Node2D"]
 script = SubResource("GDScript_np64g")
@@ -164,4 +181,13 @@ offset_bottom = 238.485
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_ej07j")
 
+[node name="Panel2" type="Panel" parent="CanvasLayer/BackButton"]
+visible = false
+layout_mode = 0
+offset_right = 172.0
+offset_bottom = 65.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cn05g")
+
+[connection signal="mouse_entered" from="CanvasLayer/BackButton" to="." method="_on_back_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/BackButton" to="." method="_on_back_button_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/BackButton" to="." method="_on_back_button_pressed"]
