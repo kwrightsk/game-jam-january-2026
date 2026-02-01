@@ -6,7 +6,6 @@
 script/source = "extends Node2D
 @onready var leaderboard = $CanvasLayer/Rank
 @onready var hover_back_button = $CanvasLayer/BackButton/Panel2
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hover_back_button.visible = false
@@ -20,13 +19,15 @@ func _display_leaderboard() -> void:
 	var data_list = JSON.parse_string(file_string)
 				
 	for i in range(min(data_list.size(), 10)):
-		leaderboard.append_text(str(i+1) + \".  \" + _construct_player_string(data_list[i], i) + \"\\n\")
+		var rank = str(i+1).pad_zeros(2)  # Pad with leading zero (01, 02, ... 10)
+		leaderboard.append_text(rank + \".  \" + _construct_player_string(data_list[i], i) + \"\\n\")
 	
 	#display missing entries if there are less than 10 entries in the dictionary
 	if (data_list.size() < 10):
 		var missing = 10 - data_list.size()
 		for i in range(missing):
-			leaderboard.append_text(str(11 - missing + i) + \".  \" + \"---\")
+			var rank = str(11 - missing + i).pad_zeros(2)
+			leaderboard.append_text(rank + \".  \" + \"---\")
 			if i < missing - 1:  # Don't add newline on the last entry
 				leaderboard.append_text(\"\\n\")
 	
@@ -39,18 +40,18 @@ func _construct_player_string(data_dict : Dictionary, index: int) -> String:
 	var colors = [\"#ED1C25\", \"#3F48CC\", \"#FFF204\", \"#22B14C\"]
 	var color = colors[index % 4]
 	
-	var max_name_width = 15
+	# Calculate spacing based on actual displayed length (without BBCode tags)
+	var max_name_width = 20
 	var space_offset = max_name_width - plr_name.length()
 	var space_add = \"\"
-	for i in range(max(space_offset, 1)):  
+	for i in range(max(space_offset, 2)):  # At least 2 spaces
 		space_add += \" \"
-	print(\"heyooo\")
 	
-	#build the string with name first, then spaces, then colored score
-	var player_substring = plr_name + space_add
-	var stats_string = \"[color=\" + color + \"]Score: \" + s_txt + \"[/color]\" 
+	# Build string: name + spaces + colored score text
+	# The key is that spaces are added BEFORE the color tags
+	var result = plr_name + space_add + \"[color=\" + color + \"]Score: \" + s_txt + \"[/color]\"
 	
-	return player_substring + stats_string
+	return result
 	
 func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_file(\"res://Scenes/game-over-screen.tscn\") # Replace with function body.
