@@ -6,6 +6,7 @@
 
 [node name="ShapeColorPicker" type="Node2D"]
 script = ExtResource("1_u1toa")
+round_path = NodePath("CanvasLayer/ColorRect/Round")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

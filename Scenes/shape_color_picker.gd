@@ -93,7 +93,7 @@ func set_random_word():
 	)
 
 	# Set background shape color
-	word_background.color = colours[bg_colour]
+	word_background.set_Colour(bg_colour)
 
 	# THIS is the correct answer now
 	correct_color = bg_colour
