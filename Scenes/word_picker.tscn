@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8jkcuw76a7aa"]
+[gd_scene load_steps=4 format=3 uid="uid://8lshtemquh1c"]
 
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_b7mhs"]
 [ext_resource type="Script" path="res://Scenes/word_picker.gd" id="1_x6pkk"]
-[ext_resource type="PackedScene" uid="uid://pq3cbr3vk3pt" path="res://Scenes/interactable_colour.tscn" id="2_62n0n"]
+[ext_resource type="PackedScene" uid="uid://vgim6n6jyc0v" path="res://Scenes/interactable_colour.tscn" id="2_62n0n"]
 
 [node name="WordPicker" type="Node2D"]
 script = ExtResource("1_x6pkk")

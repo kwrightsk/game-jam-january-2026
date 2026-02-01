@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b76asufaca6tq"]
+[gd_scene load_steps=6 format=3 uid="uid://liwpgy23v8in"]
 
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_3o3f0"]
 [ext_resource type="AudioStream" uid="uid://ce8ms38wc0phf" path="res://assets/sound_click.wav" id="2_uywya"]
