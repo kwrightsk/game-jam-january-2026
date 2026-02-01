@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 
 func _on_back_button_pressed() -> void:
 	print(\"back_button\")
-	get_tree().change_scene_to_file(\"res://Scenes/title_screen.tscn\") # Replace with function body.
+	get_tree().change_scene_to_file(\"res://Scenes/game-over-screen.tscn\") # Replace with function body.
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kj02u"]
