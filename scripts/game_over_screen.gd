@@ -31,3 +31,15 @@ func _on_main_menu_button_mouse_entered() -> void:
 
 func _on_main_menu_button_mouse_exited() -> void:
 	hover_main_menu.visible = false
+
+func _on_play_again_button_mouse_entered() -> void:
+	hover_play_again.visible = true
+
+func _on_play_again_button_mouse_exited() -> void:
+	hover_play_again.visible = false
+
+func _on_leader_board_button_mouse_entered() -> void:
+	hover_leaderboard.visible = true
+
+func _on_leader_board_button_mouse_exited() -> void:
+	hover_leaderboard.visible = false
