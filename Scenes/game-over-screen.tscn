@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b46ftpomv0jk8"]
+[gd_scene load_steps=10 format=3 uid="uid://b46ftpomv0jk8"]
 
 [ext_resource type="Script" path="res://scripts/game_over_screen.gd" id="1_lfbmt"]
 [ext_resource type="Texture2D" uid="uid://ba6mo6y6urtm7" path="res://assets/shirt-1671181932-5abe8617e0731d1ab2d8b2f6a6602d1e.webp" id="2_7eqmw"]
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="3_f5e0u"]
+[ext_resource type="AudioStream" uid="uid://ce8ms38wc0phf" path="res://assets/sound_click.wav" id="4_3jnw3"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_8bfl2"]
 
@@ -98,6 +99,10 @@ offset_right = 245.0
 offset_bottom = 569.0
 mouse_filter = 1
 texture_hover = SubResource("CanvasTexture_8bfl2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MainMenuButton"]
+stream = ExtResource("4_3jnw3")
+playback_type = 1
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="MainMenuButton"]
 texture_filter = 1

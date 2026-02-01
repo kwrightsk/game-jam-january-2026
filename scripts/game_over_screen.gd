@@ -2,6 +2,7 @@ extends Node2D
 @onready var hover_main_menu = $MainMenuButton/HoverMainMenu
 @onready var hover_leaderboard = $LeaderBoardButton/HoverLeaderBoard
 @onready var hover_play_again = $PlayAgainButton/HoverPlayAgain
+@onready var button_sound = $MainMenuButton/AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,14 +17,20 @@ func _process(delta: float) -> void:
 
 func _on_play_again_button_pressed() -> void:
 	print("play again")
+	button_sound.play()
+	await get_tree().create_timer(0.3).timeout
 	get_tree().change_scene_to_file("res://Scenes/main_level.tscn") # Replace with function body.
 
 func _on_leader_board_button_pressed() -> void:
 	print("leader board")
+	button_sound.play()
+	await get_tree().create_timer(0.3).timeout
 	get_tree().change_scene_to_file("res://Scenes/leaderboard_screen.tscn")
 
 func _on_main_menu_button_pressed() -> void:
 	print("main menu")
+	button_sound.play()
+	await get_tree().create_timer(0.3).timeout
 	get_tree().change_scene_to_file("res://Scenes/title_screen.tscn")
 
 func _on_main_menu_button_mouse_entered() -> void:
