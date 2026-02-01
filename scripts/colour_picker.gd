@@ -4,7 +4,7 @@ var colours = ["red", "blue", "green", "yellow"]
 var matched = false
 var selected_colour
 
-const GAME_OVER_SCENE := "res://game-over-screen.tscn"
+#const GAME_OVER_SCENE := "res://game-over-screen.tscn"
 
 @export var click_me_path: NodePath
 @onready var click_me = get_node(click_me_path)
@@ -12,51 +12,56 @@ const GAME_OVER_SCENE := "res://game-over-screen.tscn"
 @export var round_path: NodePath
 @onready var round = get_node(round_path)
 
-var redo = preload("res://Scenes/colour_picker.tscn")
+#var redo = preload("res://Scenes/colour_picker.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	click_me.set_Colour(colours.pick_random())
-	selected_colour = click_me.get_Colour()
+	#click_me.set_Colour(colours.pick_random())
+	#selected_colour = click_me.get_Colour()
 	# print(selected_colour)
 	
 	
-	rand_colours()
-	
+	#rand_colours()
+	for c in $clickables.get_children():
+		c.visible = false
+		c.clickable = false
+		
 	for c in $clickables.get_children():
 		c.colourClicked.connect(_on_colour_clicked)
 	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	round.text = "Round "+str(Globals.round)
+func start_game() -> void:
+	#reset game state
+	matched = false
+	selected_colour = null
 	
+	#set new target colour
+	click_me.set_Colour(colours.pick_random())
+	selected_colour = click_me.get_Colour()
+	
+	#randomize clickable colours
+	rand_colours()
+	round.text = "Round "+ str(Globals.round)
 
 func rand_colours():
 	var children = $clickables.get_children()
 
-	# Make a shuffled copy of the colours
+	#make a shuffled copy of the colours
 	var shuffled_colours = colours.duplicate()
 	shuffled_colours.shuffle()
 
-	# Assign one colour per clickable
+	#assign one colour per clickable
 	for i in children.size():
+		children[i].visible = true 
 		children[i].set_Colour(shuffled_colours[i])
 		children[i].clickable = true
 
-	
-
 func _on_colour_clicked(colour):
-	print("User clicked:", colour)
 	if colour == selected_colour:
 		print("Correct!")
-		#get_tree().change_scene_to_file("simon_says_level.tscn")
-		
 		Globals.round += 1
-		
-		print(Globals.round)
-		
+		#hide clickables when we're done
+		get_parent().on_minigame_complete()
 	else:
 		print("Wrong!")
-		get_tree().change_scene_to_file(GAME_OVER_SCENE)
+		get_parent().game_over()
+	

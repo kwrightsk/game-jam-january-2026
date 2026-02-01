@@ -1,4 +1,4 @@
-extends "res://scripts/main_level.gd"
+extends Node2D
 
 @onready var PixelOne = $SimonSaysPixel
 @onready var PixelTwo = $SimonSaysPixel2
@@ -17,8 +17,8 @@ var wait_time := 1 #for the user to read instructions
 
 var can_input := false
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Setup pixels colors and numbers (only once)
 	PixelOne.change_color("red")
 	PixelOne.assign_number(1)
 	PixelTwo.change_color("green")
@@ -28,13 +28,26 @@ func _ready() -> void:
 	PixelFour.change_color("yellow")
 	PixelFour.assign_number(4)
 	
+	# Connect input events (only once)
 	for pixel in [PixelOne, PixelTwo, PixelThree, PixelFour]:
 		var area = pixel.get_node("Area2D")
-		area.input_event.connect(_on_pixel_clicked.bind(pixel))
-	#initialize pattern before the level starts :) 
-	for i in range(pattern_length):
-		pattern.append((pick_number())) 
+		if not area.input_event.is_connected(_on_pixel_clicked):
+			area.input_event.connect(_on_pixel_clicked.bind(pixel))
+
+func start_game() -> void:
+	#reset game state
+	pattern = []
+	pattern_pos = 0
+	can_input = false
+	last_number = null
+	repeat_count = 0
 	
+	#generate new pattern
+	for i in range(pattern_length):
+		pattern.append(pick_number())
+	print(pattern)
+	
+	#show the pattern 
 	await show_pattern()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,19 +56,32 @@ func _process(delta: float) -> void:
 
 func _on_pixel_clicked(viewport, event, shape_idx, pixel: Pixel):
 	if can_input and event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		print("=== CLICK DETECTED on: ", pixel.name, " number: ", pixel.number, " ===")
+		
+		# Disable input immediately to prevent double-clicks
+		can_input = false
+		
 		pixel.flash_on()
 		await get_tree().create_timer(0.2).timeout
 		pixel.flash_off()
 		check_player_input(pixel)
+		
+		# Re-enable input after checking (if not game over)
+		if pattern_pos < pattern.size():
+			can_input = true
 
 func check_player_input(pixel: Pixel):
+	print("Clicked: ", pixel.number, " | Expected: ", pattern[pattern_pos], " | Position: ", pattern_pos)
+	
 	if pixel.number != pattern[pattern_pos]:
-		game_over()
-		#game_over()#will trigger game over
+		print("WRONG! Game Over")
+		get_parent().game_over()
 	else:
+		print("CORRECT!")
 		pattern_pos += 1
 		if pattern_pos >= pattern.size():
 			print("Success! Full pattern clicked!")
+			get_parent().on_minigame_complete()
 	
 func show_pattern():
 	can_input = false
@@ -86,7 +112,5 @@ func pick_number():
 		repeat_count = 0
 	elif last_number == number:
 		repeat_count += 1
-		last_number = number
-	else:
-		last_number = number
+	last_number = number
 	return number
