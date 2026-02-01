@@ -11,7 +11,7 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.929412, 0.109804, 0.141176, 1)
 
-[node name="TitleScreen" type="Node2D"]
+[node name="TitleScreen2" type="Node2D"]
 script = ExtResource("1_vtpvt")
 
 [node name="Background" type="CanvasLayer" parent="."]
