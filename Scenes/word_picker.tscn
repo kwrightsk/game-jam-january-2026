@@ -42,6 +42,10 @@ text = "Click on the color you see"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="SquareColor1" parent="CanvasLayer" instance=ExtResource("2_62n0n")]
+position = Vector2(577, 150)
+scale = Vector2(2, 0.35)
+
 [node name="ColorWord" type="Label" parent="CanvasLayer"]
 offset_left = 4.0
 offset_top = 114.0
