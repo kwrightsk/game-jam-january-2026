@@ -216,10 +216,10 @@ mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_xxx3x")
 
 [node name="Panel2" type="Panel" parent="PlayButton"]
-visible = false
 layout_mode = 0
 offset_right = 172.0
 offset_bottom = 65.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dl0fk")
 
 [node name="PaintbrushCursor" parent="." instance=ExtResource("3_awoib")]

@@ -1,12 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://qkg5k1hckfiy"]
+[gd_scene load_steps=9 format=3 uid="uid://cotlm46bgvicw"]
 
 [ext_resource type="Script" path="res://scripts/main_level.gd" id="1_h5yc7"]
 [ext_resource type="PackedScene" uid="uid://kdkv3jlo2bps" path="res://Scenes/colour_picker.tscn" id="1_ttbch"]
 [ext_resource type="PackedScene" uid="uid://8qdw8mq7yxqf" path="res://Scenes/simon_says_level.tscn" id="3_o8xnw"]
-[ext_resource type="PackedScene" uid="uid://c8jkcuw76a7aa" path="res://Scenes/word_picker.tscn" id="4_5ub60"]
-[ext_resource type="PackedScene" uid="uid://bj7vkxnbk8dij" path="res://Scenes/word_color_picker.tscn" id="5_bc5uf"]
+[ext_resource type="PackedScene" uid="uid://8lshtemquh1c" path="res://Scenes/word_picker.tscn" id="4_5ub60"]
+[ext_resource type="PackedScene" uid="uid://lkqua1ab18ag" path="res://Scenes/word_color_picker.tscn" id="5_bc5uf"]
 [ext_resource type="Texture2D" uid="uid://cqngkywrgde0e" path="res://assets/redSquare.png" id="6_oaxbp"]
-[ext_resource type="PackedScene" uid="uid://bxrkqfefn5yun" path="res://Scenes/shape_color_picker.tscn" id="8_ag11q"]
+[ext_resource type="PackedScene" uid="uid://4nqbiiddn4nn" path="res://Scenes/shape_color_picker.tscn" id="8_ag11q"]
 [ext_resource type="Texture2D" uid="uid://h4odx0bgt5a2" path="res://assets/greenSquare.png" id="8_mjn7f"]
 
 [node name="MainLevel" type="Node2D"]
