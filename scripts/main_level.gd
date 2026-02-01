@@ -24,6 +24,11 @@ func _ready():
 	#start first random game
 	load_random_minigame()
 
+func _process(delta: float) -> void:
+	if $UI/Timer.value == $UI/Timer.max_value:
+		game_over()
+
+
 func load_random_minigame():
 	#hide all games first
 	for game in mini_games:
@@ -53,6 +58,8 @@ func on_minigame_complete():
 	print("success")
 	await get_tree().create_timer(0.7).timeout
 	load_random_minigame()
+	if Globals.round % 5 == 0:
+		$UI/Timer.max_value -= 1
 	$time.start()
 	
 
