@@ -41,14 +41,6 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.929412, 0.109804, 0.141176, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl0fk"]
-bg_color = Color(0.6, 0.6, 0.6, 0.490196)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(1, 0.94902, 0.0156863, 1)
-
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_vtpvt")
 
@@ -172,10 +164,51 @@ grow_vertical = 0
 theme_override_fonts/normal_font = ExtResource("1_l2qgg")
 text = "* Not suitable for colour blind players. Ironic, hey? *"
 
-[node name="PlayButton" type="TextureButton" parent="."]
-offset_left = 481.0
+[node name="CreditsButton" type="TextureButton" parent="."]
+offset_left = 370.0
 offset_top = 460.0
-offset_right = 652.0
+offset_right = 541.0
+offset_bottom = 525.0
+mouse_filter = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CreditsButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.5
+offset_top = -12.5
+offset_right = 91.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("1_l2qgg")
+theme_override_font_sizes/normal_font_size = 25
+text = "CREDITS"
+
+[node name="Panel" type="Panel" parent="CreditsButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.412
+anchor_top = -2.669
+anchor_right = -3.412
+anchor_bottom = -2.669
+offset_left = 549.452
+offset_top = 173.485
+offset_right = 770.452
+offset_bottom = 238.485
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_xxx3x")
+
+[node name="PlayButton" type="TextureButton" parent="."]
+z_index = 2
+offset_left = 610.0
+offset_top = 460.0
+offset_right = 781.0
 offset_bottom = 525.0
 mouse_filter = 1
 
@@ -197,11 +230,13 @@ offset_right = 50.0
 offset_bottom = 12.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_fonts/normal_font = ExtResource("1_l2qgg")
 theme_override_font_sizes/normal_font_size = 25
 text = "PLAY"
 
-[node name="Panel" type="Panel" parent="PlayButton"]
+[node name="Panel2" type="Panel" parent="PlayButton"]
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -3.412
@@ -214,13 +249,6 @@ offset_right = 755.452
 offset_bottom = 238.485
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_xxx3x")
-
-[node name="Panel2" type="Panel" parent="PlayButton"]
-layout_mode = 0
-offset_right = 172.0
-offset_bottom = 65.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_dl0fk")
 
 [node name="PaintbrushCursor" parent="." instance=ExtResource("3_awoib")]
 
@@ -274,6 +302,5 @@ position = Vector2(1088, 46)
 scale = Vector2(0.175781, 0.175781)
 texture = ExtResource("5_4x8na")
 
-[connection signal="mouse_entered" from="PlayButton" to="." method="_on_play_button_mouse_entered"]
-[connection signal="mouse_exited" from="PlayButton" to="." method="_on_play_button_mouse_exited"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

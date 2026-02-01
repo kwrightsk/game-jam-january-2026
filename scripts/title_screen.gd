@@ -30,3 +30,7 @@ func _on_play_button_mouse_entered() -> void:
 
 func _on_play_button_mouse_exited() -> void:
 	hover_play_button.visible = false
+
+func _on_credits_button_pressed() -> void:
+	load("res://Scenes/credits.tscn") 
+	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
