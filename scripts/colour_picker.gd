@@ -6,7 +6,6 @@ var selected_colour
 
 const GAME_OVER_SCENE := "res://game-over-screen.tscn"
 
-
 @export var click_me_path: NodePath
 @onready var click_me = get_node(click_me_path)
 
@@ -52,7 +51,7 @@ func _on_colour_clicked(colour):
 	print("User clicked:", colour)
 	if colour == selected_colour:
 		print("Correct!")
-		get_tree().reload_current_scene()
+		#get_tree().change_scene_to_file("simon_says_level.tscn")
 		
 		Globals.round += 1
 		

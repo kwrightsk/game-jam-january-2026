@@ -1,37 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://kdkv3jlo2bps"]
+[gd_scene load_steps=4 format=3 uid="uid://kdkv3jlo2bps"]
 
 [ext_resource type="Script" path="res://scripts/colour_picker.gd" id="1_lwy5u"]
-
-[ext_resource type="PackedScene" uid="uid://vgim6n6jyc0v" path="res://Scenes/interactable_colour.tscn" id="2_cqqjx"]
-
+[ext_resource type="PackedScene" uid="uid://pq3cbr3vk3pt" path="res://Scenes/interactable_colour.tscn" id="2_cqqjx"]
+[ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="2_l1jtp"]
 
 [node name="colourPicker" type="Node"]
 script = ExtResource("1_lwy5u")
 click_me_path = NodePath("clickMe")
 round_path = NodePath("Round")
+
 [node name="Label" type="Label" parent="."]
-offset_left = 400.0
-offset_right = 560.0
-offset_bottom = 63.0
-text = "Click on this colour:"
+offset_left = 279.0
+offset_top = 115.0
+offset_right = 1119.0
+offset_bottom = 178.0
+theme_override_fonts/font = ExtResource("2_l1jtp")
+theme_override_font_sizes/font_size = 30
+text = "Click on this colour"
 
 [node name="clickables" type="Node" parent="."]
 
 [node name="interactableColour" parent="clickables" instance=ExtResource("2_cqqjx")]
-position = Vector2(328, 326)
+position = Vector2(500, 387)
 
 [node name="interactableColour2" parent="clickables" instance=ExtResource("2_cqqjx")]
-position = Vector2(796, 304)
+position = Vector2(651, 385)
 
 [node name="interactableColour3" parent="clickables" instance=ExtResource("2_cqqjx")]
-position = Vector2(317, 543)
+position = Vector2(498, 541)
 
 [node name="interactableColour4" parent="clickables" instance=ExtResource("2_cqqjx")]
-position = Vector2(785, 518)
+position = Vector2(655, 541)
 
 [node name="clickMe" parent="." instance=ExtResource("2_cqqjx")]
-position = Vector2(652, 73)
+position = Vector2(573, 232)
 
 [node name="Round" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 870.0
+offset_top = 54.0
+offset_right = 1075.0
+offset_bottom = 146.0
+theme_override_fonts/font = ExtResource("2_l1jtp")
+text = "Round:"
