@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://csn7axi6qef8o"]
+[gd_scene load_steps=2 format=3 uid="uid://py0k23olvvge"]
 
 [ext_resource type="Script" path="res://scripts/paintbrush_cursor.gd" id="1_k4ena"]
 

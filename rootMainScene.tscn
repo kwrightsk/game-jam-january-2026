@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0wr5qp44mksp"]
+[gd_scene load_steps=3 format=3 uid="uid://0b3tynguqs3p"]
 
 [ext_resource type="Script" path="res://scripts/colouring_book.gd" id="1_qyhf5"]
 [ext_resource type="Script" path="res://scripts/paintbrush_cursor.gd" id="2_62lt5"]
