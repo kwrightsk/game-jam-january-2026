@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c8jkcuw76a7aa" path="res://Scenes/word_picker.tscn" id="4_5ub60"]
 [ext_resource type="PackedScene" uid="uid://bj7vkxnbk8dij" path="res://Scenes/word_color_picker.tscn" id="5_bc5uf"]
 [ext_resource type="Texture2D" uid="uid://cqngkywrgde0e" path="res://assets/redSquare.png" id="6_oaxbp"]
-[ext_resource type="PackedScene" uid="uid://bxrkqfefn5yun" path="res://Scenes/shape_color_picker.tscn" id="8_ag11q"]
+[ext_resource type="PackedScene" path="res://Scenes/shape_color_picker.tscn" id="8_ag11q"]
 [ext_resource type="Texture2D" uid="uid://h4odx0bgt5a2" path="res://assets/greenSquare.png" id="8_mjn7f"]
 
 [node name="MainLevel" type="Node2D"]
