@@ -5,16 +5,54 @@
 [sub_resource type="GDScript" id="GDScript_np64g"]
 script/source = "extends Node2D
 
-
+@onready var leaderboard = $CanvasLayer/Rank
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	_display_leaderboard() # Replace with function body.
 
+func _display_leaderboard() -> void:
+	var leaderboard_path := \"user://leaderboard.json\"
+		
+	#read stored data from JSON file
+	var file_string = FileAccess.get_file_as_string(leaderboard_path)
+	var data_list = JSON.parse_string(file_string)
+				
+	for i in range(min(data_list.size(), 10)):
+		leaderboard.append_text(str(i+1) + \".  \" + _construct_player_string(data_list[i]) + \"\\n\")
+	
+	#display missing entries if there are less than 10 entries in the dictionary
+	if (data_list.size() < 10):
+		var missing = 10 - data_list.size()
+		for i in range(missing):
+			leaderboard.append_text(str(11 - missing + i) + \".  \" + \"---\" + \"\\n\")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _construct_player_string(data_dict : Dictionary) -> String:	
+	var plr_name = data_dict[\"Name\"]
+	var score = data_dict[\"Score\"]
 
+	var s_txt = str(score)
+	
+	# Calculate space offset between Player Name, Score, and Round Number, so these columns are aligned
+	# Must do this manually because bbcode doesn't have easy align support
+	
+	# Player name (calculate offset to align with all other player names in the table)
+	var space_offset = 15 - plr_name.length() + 1
+	var space_add = \"\"
+	for i in range (space_offset):
+		space_add += \" \"
+		
+	var player_substring = plr_name + space_add
+		
+	# Score, Round, and Accuracy stats of player (calculate offset to align them with other stats in table)	
+	var stats_string = \"[color=#ffa000]\" + s_txt + \"[/color]\" + \"  RND: \" + s_txt 
+	
+	space_offset = 49 - stats_string.length()
+	space_add = \"\"
+	for i in range (space_offset):
+		space_add += \" \"
+		
+	return player_substring + \"[color=black]\" + space_add + stats_string + \"[/color]\"
+	
 func _on_back_button_pressed() -> void:
 	print(\"back_button\")
 	get_tree().change_scene_to_file(\"res://Scenes/game-over-screen.tscn\") # Replace with function body.
@@ -60,6 +98,13 @@ offset_top = 1773.51
 offset_right = 5037.62
 offset_bottom = 2246.51
 theme_override_styles/panel = SubResource("StyleBoxFlat_kj02u")
+
+[node name="Rank" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 58.0
+offset_top = 176.0
+offset_right = 1084.0
+offset_bottom = 490.0
+theme_override_fonts/normal_font = ExtResource("1_3o3f0")
 
 [node name="Title" type="Label" parent="CanvasLayer"]
 anchors_preset = 10
