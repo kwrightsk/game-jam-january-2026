@@ -15,8 +15,8 @@ var redo = preload("res://Scenes/colour_picker.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var rand_name = color_names.pick_random()
 	for c in $CanvasLayer/squares.get_children():
+		var rand_name = color_names.pick_random()
 		c.set_Colour(rand_name)
 		selected_colour = c.get_Colour()
 		print(selected_colour)
