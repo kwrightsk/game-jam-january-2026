@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj7vkxnbk8dij"]
+[gd_scene load_steps=5 format=3 uid="uid://lkqua1ab18ag"]
 
 [ext_resource type="Script" path="res://Scenes/word_color_picker.gd" id="1_ajnfd"]
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="2_tqnll"]
-[ext_resource type="PackedScene" uid="uid://b46h2qeluiuqj" path="res://Scenes/interactable_colour.tscn" id="3_b5isq"]
+[ext_resource type="PackedScene" uid="uid://vgim6n6jyc0v" path="res://Scenes/interactable_colour.tscn" id="3_b5isq"]
 [ext_resource type="PackedScene" uid="uid://qh5j8imflq6k" path="res://Scenes/paintbrush_cursor.tscn" id="4_wv0rb"]
 
 [node name="WordColorPicker" type="Node2D"]
@@ -40,7 +40,7 @@ offset_right = 797.0
 offset_bottom = 262.0
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("2_tqnll")
-text = "Click on the word you see"
+text = "Click on the WORD you see"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 

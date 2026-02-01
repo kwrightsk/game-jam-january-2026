@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxrkqfefn5yun"]
+[gd_scene load_steps=4 format=3 uid="uid://4nqbiiddn4nn"]
 
 [ext_resource type="Script" path="res://Scenes/shape_color_picker.gd" id="1_u1toa"]
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="2_wrc73"]
-[ext_resource type="PackedScene" uid="uid://b46h2qeluiuqj" path="res://Scenes/interactable_colour.tscn" id="3_yk78y"]
+[ext_resource type="PackedScene" uid="uid://vgim6n6jyc0v" path="res://Scenes/interactable_colour.tscn" id="3_yk78y"]
 
 [node name="ShapeColorPicker" type="Node2D"]
 script = ExtResource("1_u1toa")
@@ -39,7 +39,7 @@ offset_right = 797.0
 offset_bottom = 262.0
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("2_wrc73")
-text = "Click on the color of the shape you see"
+text = "Click on the COLOUR of the SHAPE you see"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
