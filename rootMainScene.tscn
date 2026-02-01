@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://0b3tynguqs3p"]
+[gd_scene load_steps=3 format=3 uid="uid://0b3tynguqs3p"]
+
+[ext_resource type="Script" path="res://scripts/colouring_book.gd" id="1_qyhf5"]
+[ext_resource type="Script" path="res://scripts/paintbrush_cursor.gd" id="2_62lt5"]
 
 [node name="Root" type="Node2D"]
 
@@ -10,4 +13,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.207843, 0.313726, 1, 1)
+
+[node name="colouring book" type="Node2D" parent="."]
+script = ExtResource("1_qyhf5")
+
+[node name="paintbrush" type="Node2D" parent="colouring book"]
+script = ExtResource("2_62lt5")
+
+[node name="Timer" type="Timer" parent="colouring book"]
+wait_time = 10.0
+
+[connection signal="timeout" from="colouring book/Timer" to="colouring book" method="_on_timer_timeout"]
