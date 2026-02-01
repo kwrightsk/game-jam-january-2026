@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 func _on_play_again_button_pressed() -> void:
 	print("play again")
-	get_tree().change_scene_to_file("res://Scenes/simon_says_level.tscn") # Replace with function body.
+	get_tree().change_scene_to_file("res://Scenes/main_level.tscn") # Replace with function body.
 
 func _on_leader_board_button_pressed() -> void:
 	print("leader board")
