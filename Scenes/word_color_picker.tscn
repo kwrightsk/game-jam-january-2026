@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bj7vkxnbk8dij"]
+[gd_scene load_steps=5 format=3 uid="uid://bj7vkxnbk8dij"]
 
 [ext_resource type="Script" path="res://Scenes/word_color_picker.gd" id="1_ajnfd"]
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="2_tqnll"]
 [ext_resource type="PackedScene" uid="uid://b46h2qeluiuqj" path="res://Scenes/interactable_colour.tscn" id="3_b5isq"]
+[ext_resource type="PackedScene" uid="uid://qh5j8imflq6k" path="res://Scenes/paintbrush_cursor.tscn" id="4_wv0rb"]
 
 [node name="WordColorPicker" type="Node2D"]
 script = ExtResource("1_ajnfd")
@@ -20,6 +21,7 @@ mouse_filter = 1
 color = Color(0, 0, 0, 1)
 
 [node name="Round" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
 offset_left = 870.0
 offset_top = 54.0
 offset_right = 1075.0
@@ -84,3 +86,5 @@ position = Vector2(774, 486)
 
 [node name="SquareColor10" parent="CanvasLayer/squares" instance=ExtResource("3_b5isq")]
 position = Vector2(970, 489)
+
+[node name="PaintbrushCursor" parent="." instance=ExtResource("4_wv0rb")]

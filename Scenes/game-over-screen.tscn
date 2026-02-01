@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxr5tasveyyot"]
+[gd_scene load_steps=6 format=3 uid="uid://bxr5tasveyyot"]
 
 [ext_resource type="Script" path="res://scripts/game_over_screen.gd" id="1_lfbmt"]
 [ext_resource type="Texture2D" uid="uid://ba6mo6y6urtm7" path="res://assets/shirt-1671181932-5abe8617e0731d1ab2d8b2f6a6602d1e.webp" id="2_7eqmw"]
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="3_f5e0u"]
+[ext_resource type="PackedScene" uid="uid://qh5j8imflq6k" path="res://Scenes/paintbrush_cursor.tscn" id="4_yg52f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fduq"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -181,6 +182,8 @@ offset_right = 943.452
 offset_bottom = 237.485
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_1fduq")
+
+[node name="PaintbrushCursor" parent="." instance=ExtResource("4_yg52f")]
 
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="PlayAgainButton" to="." method="_on_play_again_button_pressed"]
