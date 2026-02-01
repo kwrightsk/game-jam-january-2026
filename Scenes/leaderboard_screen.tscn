@@ -1,11 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://b76asufaca6tq"]
+[gd_scene load_steps=6 format=3 uid="uid://liwpgy23v8in"]
 
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_3o3f0"]
+[ext_resource type="AudioStream" uid="uid://ce8ms38wc0phf" path="res://assets/sound_click.wav" id="2_uywya"]
 
 [sub_resource type="GDScript" id="GDScript_np64g"]
 script/source = "extends Node2D
 @onready var leaderboard = $CanvasLayer/Rank
 @onready var hover_back_button = $CanvasLayer/BackButton/Panel2
+@onready var button_sound = $CanvasLayer/BackButton/AudioStreamPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hover_back_button.visible = false
@@ -54,6 +56,9 @@ func _construct_player_string(data_dict : Dictionary, index: int) -> String:
 	return result
 	
 func _on_back_button_pressed() -> void:
+	print(\"back_button\")
+	button_sound.play()
+	await get_tree().create_timer(0.3).timeout
 	get_tree().change_scene_to_file(\"res://Scenes/game-over-screen.tscn\") # Replace with function body.
 	
 func _on_back_button_mouse_entered() -> void:
@@ -180,7 +185,12 @@ visible = false
 layout_mode = 0
 offset_right = 172.0
 offset_bottom = 65.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_cn05g")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/BackButton"]
+stream = ExtResource("2_uywya")
+playback_type = 1
 
 [connection signal="mouse_entered" from="CanvasLayer/BackButton" to="." method="_on_back_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/BackButton" to="." method="_on_back_button_mouse_exited"]
