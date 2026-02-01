@@ -24,6 +24,14 @@ func _ready():
 	
 	#start first random game
 	load_random_minigame()
+	for game in [
+		simon_says,
+		colour_picker,
+		word_picker,
+		color_word_picker,
+		shape_color_picker
+	]:
+		print(game)
 
 func _process(delta: float) -> void:
 	if $UI/Timer.value == $UI/Timer.max_value:
