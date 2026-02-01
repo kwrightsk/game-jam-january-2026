@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://uli6lbh0bcn2"]
+[gd_scene load_steps=11 format=3 uid="uid://cbhmpky7sviob"]
 
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="1_l2qgg"]
 [ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_vtpvt"]
@@ -39,14 +39,6 @@ border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.929412, 0.109804, 0.141176, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl0fk"]
-bg_color = Color(0.6, 0.6, 0.6, 0.490196)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(1, 0.94902, 0.0156863, 1)
 
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_vtpvt")
@@ -212,6 +204,7 @@ mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_xxx3x")
 
 [node name="PlayButton" type="TextureButton" parent="."]
+z_index = 2
 offset_left = 610.0
 offset_top = 460.0
 offset_right = 781.0
@@ -237,7 +230,8 @@ theme_override_fonts/normal_font = ExtResource("1_l2qgg")
 theme_override_font_sizes/normal_font_size = 25
 text = "PLAY"
 
-[node name="Panel" type="Panel" parent="PlayButton"]
+[node name="Panel2" type="Panel" parent="PlayButton"]
+z_index = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -3.412
@@ -250,13 +244,6 @@ offset_right = 755.452
 offset_bottom = 238.485
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_xxx3x")
-
-[node name="Panel2" type="Panel" parent="PlayButton"]
-layout_mode = 0
-offset_right = 172.0
-offset_bottom = 65.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_dl0fk")
 
 [node name="PaintbrushCursor" parent="." instance=ExtResource("3_awoib")]
 
@@ -310,7 +297,5 @@ position = Vector2(1088, 46)
 scale = Vector2(0.175781, 0.175781)
 texture = ExtResource("5_4x8na")
 
-[connection signal="mouse_entered" from="PlayButton" to="." method="_on_play_button_mouse_entered"]
-[connection signal="mouse_exited" from="PlayButton" to="." method="_on_play_button_mouse_exited"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
