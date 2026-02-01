@@ -55,6 +55,7 @@ func start_game() -> void:
 	
 	#show the pattern 
 	await show_pattern()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -75,6 +76,8 @@ func _on_pixel_clicked(viewport, event, shape_idx, pixel: Pixel):
 		# Re-enable input after checking (if not game over)
 		if pattern_pos < pattern.size():
 			can_input = true
+			get_parent().start_timer()
+			
 
 func check_player_input(pixel: Pixel):
 	print("Clicked: ", pixel.number, " | Expected: ", pattern[pattern_pos], " | Position: ", pattern_pos)
@@ -102,6 +105,7 @@ func show_pattern():
 		await get_tree().create_timer(gap_time).timeout
 	
 	can_input = true
+	get_parent().start_timer()
 
 func get_pixel(num: int):
 	match num:

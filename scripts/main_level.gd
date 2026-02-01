@@ -18,13 +18,26 @@ func _ready():
 		print("  - ", child.name)
 	mini_games = [simon_says, colour_picker, word_picker, color_word_picker, shape_color_picker]
 	#game_over_label.visible = false
-	
+	#$Timer.start()
 	#reset score
 	#Globals.reset_score()
 	#update_score()
 	
 	#start first random game
 	load_random_minigame()
+	for game in [
+		simon_says,
+		colour_picker,
+		word_picker,
+		color_word_picker,
+		shape_color_picker
+	]:
+		print(game)
+
+func _process(delta: float) -> void:
+	if $UI/Timer.value == $UI/Timer.max_value:
+		game_over()
+
 
 func load_random_minigame():
 	#hide all games first
@@ -50,9 +63,16 @@ func load_random_minigame():
 func on_minigame_complete():
 	#Globals.add_score(10)
 	#update_score()
+	$time.stop()
+	$UI/Timer.value = 0
 	print("success")
 	await get_tree().create_timer(0.7).timeout
 	load_random_minigame()
+	if Globals.round % 5 == 0:
+		$UI/Timer.max_value -= 1
+	if $SimonSaysLevel.visible == false:
+		start_timer()
+	
 
 func game_over():
 	#game_over_label.visible = true
@@ -65,9 +85,15 @@ func game_over():
 	save_to_leaderboard()
 	load("res://Scenes/game-over-screen.tscn")
 	get_tree().change_scene_to_file("res://Scenes/game-over-screen.tscn")
-	
+
 #func update_score():
 	#score_label.text = "Score: " + str(Globals.score)
+
+
+
+func _on_time_timeout() -> void:
+	$UI/Timer.value+=1
+	#print(69)
 
 func save_to_file():
 	
@@ -132,3 +158,6 @@ func save_to_leaderboard():
 #helper function to compare scores (tbt to cmpt280 <3)
 func _compare_scores(player1, player2):
 	return player1["Score"] > player2["Score"]
+
+func start_timer():
+	$time.start()
