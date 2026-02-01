@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bj7vkxnbk8dij"]
+[gd_scene load_steps=5 format=3 uid="uid://bj7vkxnbk8dij"]
 
 [ext_resource type="Script" path="res://Scenes/word_color_picker.gd" id="1_ajnfd"]
 [ext_resource type="FontFile" uid="uid://boafiido6lxpb" path="res://assets/PressStart2P.ttf" id="2_tqnll"]
 [ext_resource type="PackedScene" uid="uid://b46h2qeluiuqj" path="res://Scenes/interactable_colour.tscn" id="3_b5isq"]
+[ext_resource type="PackedScene" uid="uid://qh5j8imflq6k" path="res://Scenes/paintbrush_cursor.tscn" id="4_wv0rb"]
 
 [node name="WordColorPicker" type="Node2D"]
 script = ExtResource("1_ajnfd")
@@ -42,6 +43,10 @@ theme_override_fonts/font = ExtResource("2_tqnll")
 text = "Click on the word you see"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="SquareColor1" parent="CanvasLayer" instance=ExtResource("3_b5isq")]
+position = Vector2(577, 150)
+scale = Vector2(2, 0.35)
 
 [node name="ColorWord" type="Label" parent="CanvasLayer"]
 offset_left = 4.0
@@ -85,3 +90,5 @@ position = Vector2(774, 486)
 
 [node name="SquareColor10" parent="CanvasLayer/squares" instance=ExtResource("3_b5isq")]
 position = Vector2(970, 489)
+
+[node name="PaintbrushCursor" parent="." instance=ExtResource("4_wv0rb")]

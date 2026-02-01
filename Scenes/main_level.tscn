@@ -1,12 +1,20 @@
+
 [gd_scene load_steps=8 format=3 uid="uid://cotlm46bgvicw"]
 
+
+
 [ext_resource type="Script" path="res://scripts/main_level.gd" id="1_h5yc7"]
-[ext_resource type="PackedScene" uid="uid://kdkv3jlo2bps" path="res://Scenes/colour_picker.tscn" id="1_ttbch"]
+[ext_resource type="PackedScene" uid="uid://brp5dwa1lqmhn" path="res://Scenes/colour_picker.tscn" id="1_ttbch"]
 [ext_resource type="PackedScene" uid="uid://8qdw8mq7yxqf" path="res://Scenes/simon_says_level.tscn" id="3_o8xnw"]
-[ext_resource type="PackedScene" path="res://Scenes/word_picker.tscn" id="4_5ub60"]
-[ext_resource type="PackedScene" path="res://Scenes/word_color_picker.tscn" id="5_bc5uf"]
+
+
 [ext_resource type="Texture2D" uid="uid://cqngkywrgde0e" path="res://assets/redSquare.png" id="6_oaxbp"]
 [ext_resource type="Texture2D" uid="uid://h4odx0bgt5a2" path="res://assets/greenSquare.png" id="8_mjn7f"]
+
+[ext_resource type="PackedScene" uid="uid://c2aramtbfm6t5" path="res://Scenes/word_picker.tscn" id="4_5ub60"]
+[ext_resource type="PackedScene" uid="uid://bj7vkxnbk8dij" path="res://Scenes/word_color_picker.tscn" id="5_bc5uf"]
+[ext_resource type="PackedScene" uid="uid://bxrkqfefn5yun" path="res://Scenes/shape_color_picker.tscn" id="6_g0bb6"]
+
 
 [node name="MainLevel" type="Node2D"]
 script = ExtResource("1_h5yc7")
@@ -33,6 +41,7 @@ visible = false
 visible = false
 
 [node name="WordColorPicker" parent="." instance=ExtResource("5_bc5uf")]
+
 visible = false
 
 [node name="time" type="Timer" parent="."]
@@ -59,3 +68,7 @@ tint_over = Color(1, 0.54539, 0.799545, 1)
 tint_progress = Color(0, 1, 1, 1)
 
 [connection signal="timeout" from="time" to="." method="_on_time_timeout"]
+
+
+[node name="ShapeColorPicker" parent="." instance=ExtResource("6_g0bb6")]
+
