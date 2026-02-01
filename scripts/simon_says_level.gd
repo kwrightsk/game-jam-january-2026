@@ -1,12 +1,10 @@
 extends Node2D
-
 @onready var PixelOne = $SimonSaysPixel
 @onready var PixelTwo = $SimonSaysPixel2
 @onready var PixelThree = $SimonSaysPixel3
 @onready var PixelFour = $SimonSaysPixel4
 @export var round_path: NodePath
 @onready var round = get_node(round_path)
-
 var pattern = []
 var numbers = [1, 2, 3, 4]
 var last_number = null #to make sure a number doesn't repeat more than two times in a row 
@@ -16,7 +14,6 @@ var pattern_pos = 0
 var show_time := 0.5 #for the pixel pattern
 var gap_time := 0.3 #for in between the pixels
 var wait_time := 1 #for the user to read instructions
-
 var can_input := false
 
 func _ready() -> void:
@@ -38,19 +35,23 @@ func _ready() -> void:
 
 func start_game() -> void:
 	self.visible = true 
+	
 	#reset game state
 	pattern = []
 	pattern_pos = 0
 	can_input = false
-	last_number = null
-	repeat_count = 0
 	
+	#difficulty set up - increase every 6 rounds starting from round 3
+	# Round 3: length 4, Round 6: length 5, Round 9: length 6, etc.
+	if Globals.round >= 3 and Globals.round % 6 == 0 and pattern_length < 10:
+		pattern_length += 1
+		
 	#generate new pattern
 	for i in range(pattern_length):
 		pattern.append(pick_number())
-	print(pattern)
+	print("Generated pattern: ", pattern, " (length: ", pattern.size(), ")")
 	round.text = "Round "+ str(Globals.round)
-
+	
 	#show the pattern 
 	await show_pattern()
 
@@ -86,6 +87,7 @@ func check_player_input(pixel: Pixel):
 		if pattern_pos >= pattern.size():
 			print("Success! Full pattern clicked!")
 			Globals.round += 1
+			print("Incremented Globals.round to: ", Globals.round)
 			get_parent().on_minigame_complete()
 	
 func show_pattern():
@@ -117,5 +119,8 @@ func pick_number():
 		repeat_count = 0
 	elif last_number == number:
 		repeat_count += 1
+	else:
+		repeat_count = 0
+		
 	last_number = number
 	return number
